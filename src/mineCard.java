@@ -5,7 +5,7 @@
  */
 
 /**
- *
+ * turner change
  * @author n00000158
  */
 public class mineCard implements ActionStack{
