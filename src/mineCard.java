@@ -21,3 +21,4 @@ public class mineCard implements ActionStack{
     // Trash a treasure card from hand.  Gain a traesure card costing up to 3 moniy more, put it in hand
     
 }
+//Turner 24 test
