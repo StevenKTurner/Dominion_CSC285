@@ -5,7 +5,15 @@
  */
 
 /**
+<<<<<<< HEAD
  * turner change
+=======
+<<<<<<< HEAD
+ * Neal was here
+=======
+ * Hey this is a test
+>>>>>>> origin/master
+>>>>>>> origin/master
  * @author n00000158
  */
 public class mineCard implements ActionStack{
