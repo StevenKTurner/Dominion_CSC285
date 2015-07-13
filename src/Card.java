@@ -8,10 +8,13 @@
  *
  * @author Steven
  */
-public class Hand {
+public interface Card {
     
-    public Hand(Player player){
-        
-    }
+    public int getCost();
+    public Action getAction();
+    public String getName();
+    public String getType();
+    public int getValue();
+    public int getCashValue();
     
 }

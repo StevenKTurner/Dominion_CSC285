@@ -2,12 +2,6 @@
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 /**
  *
  * @author Steven
@@ -18,7 +12,8 @@ public class Player {
     private ArrayList<Card> hand; //Hand object that holds the cards for each turn
     private ArrayList<Card> deck; //Deck object which holds the player's cards
     private ArrayList<Card> discardPile; //Discard object which hold discarded cards
-    private int actions; //the number of actions the player has per turn
+    private ArrayList<Card> inPlay; //Cards that have been used but not discarded yet
+    private int actionPoints; //the number of actions the player has per turn
     private int buys; //the number of buys the player has per turn
     private int cash;
     private final int HAND_LIMIT = 5;
@@ -26,55 +21,81 @@ public class Player {
     public Player(String name){
         
         this.name = name;
-        setActions(1);
-        setBuys(1);
+        for (int i = 0; i < 7; i++){
+            deck.add(new Copper());
+        }
+        for (int i = 0; i < 3; i++){
+            deck.add(new Village());
+        }
+        deck = shuffleCards(deck);
+        drawCards(HAND_LIMIT);
         
     }
     
     public void beginTurn(){
-        actions = 1;
-        buys = 1;
+        setActionPoints(1);
+        setBuys(1);
     }
     
     public void endTurn(){
-        discard(hand);
-        drawCards(HAND_LIMIT);
+        discard(inPlay); //discard cards that have been played
+        discard(hand); //discard any cards left in hand
+        drawCards(HAND_LIMIT); //draw up to 5 cards
     }
     
     //Uses a card if the player has available actions, and reduces actions
     //if done. Displays warning message if no actions left.
-    public void useCard(Card card){
-        if (actions > 0){
+    public Action useCard(Card card){
+        Action action;
+        if (actionPoints > 0){
             //Call method(s) of card that may pass values back to player, such as extra buys
-            
+            action = card.getAction();
             //Then move the card to the discard pile so it can't be used again
             discard(card);
-            actions--;
-        } else JOptionPane.showMessageDialog(null, "No Actions Left");
+            actionPoints--;
+        } else {
+            JOptionPane.showMessageDialog(null, "No Actions Left");
+            action = null;
+        }
+        
+        return action;
     }
     
-    //If player has enough money and buys, player removes card from a StoreStack and places that card in their
+    //If player has enough money and buys, player removes card from the Store and places that card in their
     //Discard Pile
-    public void useBuy(StoreStack stack){
-        Card card = stack.getCard();
-        if ((cash > card.getCost()) && (buys > 0)){
+    public void useBuy(Store store, Card storeCard){
+        boolean inStock = store.cardInStock(storeCard);
+        Card card = storeCard;
+        if ((cash > card.getCost()) && (buys > 0) && (inStock)){
             discardPile.add(card);
-            stack.remove(card);
+            store.removeCard(card);
             buys--;
             cash -= card.getCost();
         } else JOptionPane.showMessageDialog(null, "Cannot Afford Card or Out of Buys");
     }
     
-    //tells hand to draw up to 5 cards
+    public ArrayList<Card> shuffleCards(ArrayList<Card> cards){
+        ArrayList<Card> shuffledCards = new ArrayList<>();
+        
+        for (int i = cards.size(); i > 0; i--){
+            int random = (int) Math.floor(Math.random() * i);
+            shuffledCards.add(cards.get(i));
+            cards.remove(i);
+        }
+        
+        return shuffledCards;
+    }
+    
+    //tells hand to draw specified number of cards
     public void drawCards(int amount){
         while(amount > 0){
             if(deck.size() <= 0){
                 deck.addAll(discardPile);
                 discardPile.clear();
+                deck = shuffleCards(deck);
             }
-            int shuffledCard = (int)(Math.random()*(deck.size()-1));
-            hand.add(deck.get(shuffledCard));
-            deck.remove(shuffledCard);
+            hand.add(deck.get(0)); //adds top card of deck to hand
+            deck.remove(0); // removes top card of deck
             amount--;
         }
     }
@@ -82,7 +103,7 @@ public class Player {
     //tells hand to discard cards
     public void discard(ArrayList<Card> cards){
         for(int i = cards.size()-1; i >= 0; i--){
-            discardPile.add(i);
+            discardPile.add(cards.get(i));
             cards.remove(i);
         }
     }
@@ -92,17 +113,30 @@ public class Player {
     }
     
     public void trashCard(Card card, ArrayList<Card> source){
-        int location = source.lastIndexOf(card);
-        source.remove(location);
-        card.destroy();
+        source.remove(card);
     }
     
-    public void setActions(int actions){
-        this.actions = actions;
+    public int scoreDeck(){
+        int score = 0;
+        
+        //put all the players cards in the deck for easier counting
+        discard(hand);
+        discard(inPlay);
+        
+        for (int i = 0; i <= deck.size(); i++){
+            score = deck.get(i).getValue();
+        }
+        
+        return score;
+        
     }
     
-    public int getActions(){
-        return actions;
+    public void setActionPoints(int actions){
+        this.actionPoints = actions;
+    }
+    
+    public int getActionPoints(){
+        return actionPoints;
     }
     
     public void setBuys(int buys){
