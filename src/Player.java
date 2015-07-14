@@ -21,6 +21,11 @@ public class Player {
     public Player(String name){
         
         this.name = name;
+        deck = new ArrayList<Card>();
+        hand = new ArrayList<Card>();
+        discardPile = new ArrayList<Card>();
+        inPlay = new ArrayList<Card>();
+        
         for (int i = 0; i < 7; i++){
             deck.add(new Copper());
         }
@@ -77,10 +82,10 @@ public class Player {
     public ArrayList<Card> shuffleCards(ArrayList<Card> cards){
         ArrayList<Card> shuffledCards = new ArrayList<>();
         
-        for (int i = cards.size(); i > 0; i--){
+        for (int i = cards.size()-1; i >= 0; i--){
             int random = (int) Math.floor(Math.random() * i);
-            shuffledCards.add(cards.get(i));
-            cards.remove(i);
+            shuffledCards.add(cards.get(random));
+            cards.remove(random);
         }
         
         return shuffledCards;
@@ -131,6 +136,22 @@ public class Player {
         
     }
     
+    public ArrayList<Card> getHand(){
+        return hand;
+    }
+    
+    public ArrayList<Card> getDeck(){
+        return deck;
+    }
+    
+    public ArrayList<Card> getInPlay(){
+        return inPlay;
+    }
+    
+    public ArrayList<Card> getDiscardPile(){
+        return discardPile;
+    }
+    
     public void setActionPoints(int actions){
         this.actionPoints = actions;
     }
@@ -162,5 +183,39 @@ public class Player {
     public void removeCash(int amount){
         cash -= amount;
     }
+    
+//    public static void main(String[] args) {
+//        Player player = new Player("Steven");
+//        
+//        player.beginTurn();
+//        System.out.println("Action Points: " + player.getActionPoints());
+//        System.out.println("Cards:");
+//        for(int i = player.getHand().size()-1; i>=0; i--){
+//            System.out.println(player.getHand().get(i));
+//        }
+//        System.out.println("Discard test:");
+//        player.discard(player.getHand().get(2));
+//        for(int i = player.getHand().size()-1; i>=0; i--){
+//            System.out.println(player.getHand().get(i));
+//        }
+//        System.out.println("Discard Pile:");
+//        for(int i = player.getDiscardPile().size()-1; i>=0; i--){
+//            System.out.println(player.getDiscardPile().get(i));
+//        }
+//        System.out.println("End Turn test:");
+//        player.endTurn();
+//        for(int i = player.getHand().size()-1; i>=0; i--){
+//            System.out.println("Hand " + i + " " + player.getHand().get(i));
+//        }
+//        for(int i = player.getDiscardPile().size()-1; i>=0; i--){
+//            System.out.println("Discard " + i + " " + player.getDiscardPile().get(i));
+//        }
+//        System.out.println("Draw 3 cards");
+//        player.drawCards(3);
+//        for(int i = player.getHand().size()-1; i>=0; i--){
+//            System.out.println("Hand " + i + " " + player.getHand().get(i));
+//        }
+//        
+//    }
     
 }
