@@ -100,6 +100,9 @@ public class Player {
                 deck.addAll(discardPile);
                 discardPile.clear();
                 deck = shuffleCards(deck);
+                if(deck.size() <= 0){
+                    return;
+                }
             }
             hand.add(deck.get(0)); //adds top card of deck to hand
             deck.remove(0); // removes top card of deck
