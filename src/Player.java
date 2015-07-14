@@ -55,8 +55,10 @@ public class Player {
         if (actionPoints > 0){
             //Call method(s) of card that may pass values back to player, such as extra buys
             action = card.getAction();
-            //Then move the card to the discard pile so it can't be used again
-            discard(card);
+            //Then move the card to the "In Play" area so it can't be used again
+            //We're keeping it out of discard to prevent it from being shuffled back into the deck on the same turn
+            inPlay.add(card);
+            hand.remove(card);
             actionPoints--;
         } else {
             JOptionPane.showMessageDialog(null, "No Actions Left");
