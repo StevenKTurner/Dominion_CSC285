@@ -44,9 +44,19 @@ public class Store {
               
         //How will the ten action card stack ArrayLists be populated with ten 
         //cards without having to use ten separate for loops? 
-        for (int i = 0; i <=9; i++){
-            villageStack.add(new Village());
-        }
+        fillDeck(cellarStack, new Cellar());
+        fillDeck(marketStack, new Market());
+        fillDeck(mineStack, new Mine());
+        fillDeck(militiaStack, new Militia());
+        fillDeck(woodcutterStack, new Woodcutter());
+        fillDeck(villageStack, new Village());
+        fillDeck(smithyStack, new Smithy());
+        fillDeck(workshopStack, new Workshop());
+        fillDeck(remodelStack, new Remodel());
+        fillDeck(moatStack, new Moat());
+        fillDeck(estateStack, new Estate());
+        fillDeck(dutchyStack, new Dutchy());
+        fillDeck(provinceStack, new Province());
         
     }
     
@@ -167,4 +177,10 @@ public class Store {
         
         return inStock;
     }
+    
+ 
+    public void fillDeck(ArrayList<Card> arrayList, Card card) {
+        for (int i = 0; i <= arrayList.size(); i++) {
+            arrayList.add(i, card);
+        }
 }
