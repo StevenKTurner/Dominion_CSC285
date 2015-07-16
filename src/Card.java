@@ -10,11 +10,13 @@
  */
 public interface Card {
     
+    public String getName();    
+    public String getType();
     public int getCost();
     public Action getAction();
-    public String getName();
-    public String getType();
     public int getValue();
     public int getCashValue();
+    public boolean isAttack();
+    public boolean isReaction();
     
 }

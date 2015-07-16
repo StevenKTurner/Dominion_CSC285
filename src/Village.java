@@ -9,38 +9,55 @@
  * @author Steven
  */
 class Village implements Card {
+    
+    private String name = "Village";
+    private String type = "Action";
+    private int cost = 3;
+    private Action action; //gives 2 actions
+    private int value = 0;
+    private int cashValue = 0;
+    private boolean attack = false;
+    private boolean reaction = false;
 
     public Village() {
     }
 
     @Override
     public int getCost() {
-        return 1; //test value
+        return cost;
     }
 
     @Override
     public Action getAction() {
-        return new Action();
+        return action;
     }
 
     @Override
     public String getName() {
-        return "village";
+        return name;
     }
 
     @Override
     public String getType() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return type;
     }
 
     @Override
     public int getValue() {
-        return 1; //Test value
+        return value;
     }
 
     @Override
     public int getCashValue() {
-        return 0; //Test value
+        return cashValue;
+    }
+    
+    public boolean isAttack(){
+        return attack;
+    }
+    
+    public boolean isReaction(){
+        return reaction;
     }
     
 }

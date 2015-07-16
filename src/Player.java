@@ -80,12 +80,12 @@ public class Player {
     public void useBuy(Store store, Card storeCard){
         boolean inStock = store.cardInStock(storeCard);
         Card card = storeCard;
-        if ((cash > card.getCost()) && (buys > 0) && (inStock)){
+        if ((cash >= card.getCost()) && (buys > 0) && (inStock)){
             discardPile.add(card);
             store.removeCard(card);
             buys--;
             cash -= card.getCost();
-        } else JOptionPane.showMessageDialog(null, "Cannot Afford Card or Out of Buys");
+        } else JOptionPane.showMessageDialog(null, "Cannot Afford Card or Out of Buys or Out of Stock");
     }
     
     public ArrayList<Card> shuffleCards(ArrayList<Card> cards){
@@ -125,6 +125,7 @@ public class Player {
             cards.remove(i);
         }
     }
+    
     public void discard(Card card){
         discardPile.add(card);
         hand.remove(card);
