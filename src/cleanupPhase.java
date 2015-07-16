@@ -1,13 +1,18 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/**
- *
- * @author n00000158
- */
-public class cleanupPhase {
+public class cleanupPhase implements Turn {
     
+    String turnType;
+    Turn currentTurn;
+    
+    public cleanupPhase (GameManager gameManager) {
+        //Send all cards in hand and in play to the discard pile
+    }
+    
+    public void endPhase() {
+        
+    }
+    
+    public void use() {
+    
+    }
+   
 }

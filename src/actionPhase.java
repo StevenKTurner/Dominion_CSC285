@@ -1,13 +1,20 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+public class actionPhase implements Turn {
+    
+    Turn currentTurn;
+    String turnType;
+    int turnPhase;
+    
+    public actionPhase (GameManager gameManager) {
+        //Action Phase
+    }
+    
+    public void endPhase() {
+        
+    }
+    
+    public void use() {
+       
 
-/**
- *
- * @author n00000158
- */
-public class actionPhase {
+    }
     
 }

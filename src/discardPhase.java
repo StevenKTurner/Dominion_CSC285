@@ -1,13 +1,20 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/**
- *
- * @author n00000158
- */
-public class discardPhase {
+public class discardPhase implements Turn{
+   
+    String turnType;
+    Turn currentTurn;
+    
+    public discardPhase(GameManager gameManager){
+        //Discard when militia is played
+    }
+    
+    public void endPhase() {
+        
+    }
+    
+    public void use() {
+    
+    }
+    
+    
     
 }
