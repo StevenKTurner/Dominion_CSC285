@@ -8,18 +8,18 @@
  *
  * @author Steven
  */
-class Village implements Card {
+class Silver implements Card {
     
-    private String name = "village";
-    private String type = "Action";
+    private String name = "silver";
+    private String type = "Money";
     private int cost = 3;
-    private Action action; //gives 2 actions
+    private Action action = null;
     private int value = 0;
-    private int cashValue = 0;
+    private int cashValue = 2;
     private boolean attack = false;
     private boolean reaction = false;
 
-    public Village() {
+    public Silver() {
     }
 
     @Override

@@ -8,18 +8,18 @@
  *
  * @author Steven
  */
-class Village implements Card {
+class Militia implements Card {
     
-    private String name = "village";
+    private String name = "militia";
     private String type = "Action";
-    private int cost = 3;
-    private Action action; //gives 2 actions
+    private int cost = 4;
+    private Action action; //+2 Cash, Each other player discards down to 3 cards
     private int value = 0;
     private int cashValue = 0;
-    private boolean attack = false;
+    private boolean attack = true;
     private boolean reaction = false;
 
-    public Village() {
+    public Militia() {
     }
 
     @Override

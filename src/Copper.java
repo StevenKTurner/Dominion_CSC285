@@ -9,38 +9,55 @@
  * @author Steven
  */
 class Copper implements Card {
+    
+    private String name = "copper";
+    private String type = "Money";
+    private int cost = 0;
+    private Action action = null; 
+    private int value = 0;
+    private int cashValue = 1;
+    private boolean attack = false;
+    private boolean reaction = false;
 
     public Copper() {
     }
 
     @Override
     public int getCost() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return cost;
     }
 
     @Override
     public Action getAction() {
-        return new Action();
+        return action;
     }
 
     @Override
     public String getName() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return name;
     }
 
     @Override
     public String getType() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return type;
     }
 
     @Override
     public int getValue() {
-        return 0;
+        return value;
     }
 
     @Override
     public int getCashValue() {
-        return 1;
+        return cashValue;
+    }
+    
+    public boolean isAttack(){
+        return attack;
+    }
+    
+    public boolean isReaction(){
+        return reaction;
     }
     
 }
