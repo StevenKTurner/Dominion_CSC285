@@ -8,7 +8,7 @@
  *
  * @author n00000158
  */
-public class workshop implements ActionStack{
+public class workshop implements Card{
     
     private String name = "Workshop";
     private String type = "Action";
@@ -21,4 +21,45 @@ public class workshop implements ActionStack{
     
     // gain a card up to 4 monies
     
+    
+        public workshop() {
+    }
+
+    @Override
+    public int getCost() {
+        return cost;
+    }
+
+    @Override
+    public Action getAction() {
+        return action;
+    }
+
+    @Override
+    public String getName() {
+        return name;
+    }
+
+    @Override
+    public String getType() {
+        return type;
+    }
+
+    @Override
+    public int getValue() {
+        return value;
+    }
+
+    @Override
+    public int getCashValue() {
+        return cashValue;
+    }
+    
+    public boolean isAttack(){
+        return attack;
+    }
+    
+    public boolean isReaction(){
+        return reaction;
+    }
 }

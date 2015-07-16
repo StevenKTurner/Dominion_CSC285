@@ -10,7 +10,7 @@
  */
 class Village implements Card {
     
-    private String name = "village";
+    private String name = "Village";
     private String type = "Action";
     private int cost = 3;
     private Action action; //gives 2 actions

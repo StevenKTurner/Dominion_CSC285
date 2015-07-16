@@ -8,7 +8,7 @@
  *
  * @author n00000158
  */
-public class cellar implements ActionStack{
+public class cellar implements Card{
     
     
     private String name = "Cellar";
@@ -22,5 +22,44 @@ public class cellar implements ActionStack{
     
     // +1 action
     // Discard any number of cards.  +1 card per card discarded.
+        public cellar() {
+    }
+
+    @Override
+    public int getCost() {
+        return cost;
+    }
+
+    @Override
+    public Action getAction() {
+        return action;
+    }
+
+    @Override
+    public String getName() {
+        return name;
+    }
+
+    @Override
+    public String getType() {
+        return type;
+    }
+
+    @Override
+    public int getValue() {
+        return value;
+    }
+
+    @Override
+    public int getCashValue() {
+        return cashValue;
+    }
     
+    public boolean isAttack(){
+        return attack;
+    }
+    
+    public boolean isReaction(){
+        return reaction;
+    }
 }

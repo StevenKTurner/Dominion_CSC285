@@ -8,7 +8,7 @@
  *
  * @author n00000158
  */
-public class moat implements ActionStack{
+public class moat implements Card{
     
     private String name = "Moat";
     private String type = "Action / Reaction";
@@ -22,4 +22,45 @@ public class moat implements ActionStack{
     // +2 cards
     //when another player plays an attack card, you may reveal this from your hand.  If you do, you are uneffected be the attack.
     
+    
+        public moat() {
+    }
+
+    @Override
+    public int getCost() {
+        return cost;
+    }
+
+    @Override
+    public Action getAction() {
+        return action;
+    }
+
+    @Override
+    public String getName() {
+        return name;
+    }
+
+    @Override
+    public String getType() {
+        return type;
+    }
+
+    @Override
+    public int getValue() {
+        return value;
+    }
+
+    @Override
+    public int getCashValue() {
+        return cashValue;
+    }
+    
+    public boolean isAttack(){
+        return attack;
+    }
+    
+    public boolean isReaction(){
+        return reaction;
+    }
 }

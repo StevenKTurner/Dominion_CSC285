@@ -8,7 +8,7 @@
  *
  * @author n00000158
  */
-public class smithy implements ActionStack{
+public class smithy implements Card{
     
     private String name = "Smithy";
     private String type = "Action";
@@ -20,5 +20,46 @@ public class smithy implements ActionStack{
     private boolean reaction = false;
     
     // +3 cards
+   
     
+        public smithy() {
+    }
+
+    @Override
+    public int getCost() {
+        return cost;
+    }
+
+    @Override
+    public Action getAction() {
+        return action;
+    }
+
+    @Override
+    public String getName() {
+        return name;
+    }
+
+    @Override
+    public String getType() {
+        return type;
+    }
+
+    @Override
+    public int getValue() {
+        return value;
+    }
+
+    @Override
+    public int getCashValue() {
+        return cashValue;
+    }
+    
+    public boolean isAttack(){
+        return attack;
+    }
+    
+    public boolean isReaction(){
+        return reaction;
+    }
 }
