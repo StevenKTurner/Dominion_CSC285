@@ -4,7 +4,7 @@ import java.util.*;
  * @author Zach
  **/
 
-public class Store implements Card {
+public class Store {
     
     //Main ArrayList to hold the 10 action card store stacks.
     ArrayList<ArrayList<Card>> storeStacks = new ArrayList<>();
@@ -44,6 +44,10 @@ public class Store implements Card {
               
         //How will the ten action card stack ArrayLists be populated with ten 
         //cards without having to use ten separate for loops? 
+        for (int i = 0; i <=9; i++){
+            villageStack.add(new Village());
+        }
+        
     }
     
     public void removeCard (Card card) {
@@ -54,43 +58,43 @@ public class Store implements Card {
         //to have a card removed from it.
         switch (name) {
             case "cellar":
-                cellarStack.remove(cellarStack.size());
+                cellarStack.remove(cellarStack.size()-1);
                 break;
             case "market":
-                marketStack.remove(marketStack.size());
+                marketStack.remove(marketStack.size()-1);
                 break;
             case "mine":
-                mineStack.remove(mineStack.size());
+                mineStack.remove(mineStack.size()-1);
                 break;
             case "militia":
-                militiaStack.remove(militiaStack.size());
+                militiaStack.remove(militiaStack.size()-1);
                 break;
             case "woodcutter":
-                woodcutterStack.remove(woodcutterStack.size());
+                woodcutterStack.remove(woodcutterStack.size()-1);
                 break;
             case "village":
-                villageStack.remove(villageStack.size());
+                villageStack.remove(villageStack.size()-1);
                 break;
             case "smithy":
-                smithyStack.remove(smithyStack.size());
+                smithyStack.remove(smithyStack.size()-1);
                 break;
             case "workshop":
-                workshopStack.remove(workshopStack.size());
+                workshopStack.remove(workshopStack.size()-1);
                 break;
             case "remodel":
-                remodelStack.remove(remodelStack.size());
+                remodelStack.remove(remodelStack.size()-1);
                 break;
             case "moat":
-                moatStack.remove(moatStack.size());
+                moatStack.remove(moatStack.size()-1);
                 break;
             case "estate":
-                estateStack.remove(estateStack.size());
+                estateStack.remove(estateStack.size()-1);
                 break;
             case "dutchy":
-                dutchyStack.remove(dutchyStack.size());
+                dutchyStack.remove(dutchyStack.size()-1);
                 break;
             case "province":
-                provinceStack.remove(provinceStack.size());
+                provinceStack.remove(provinceStack.size()-1);
                 break;
             default:
                 System.out.println("This default statement should never be reached");
@@ -119,43 +123,43 @@ public class Store implements Card {
         //inStock to true or false and then returns inStock.
         switch (name) {
             case "cellar":
-                inStock = cellarStack.isEmpty();
+                inStock = !cellarStack.isEmpty();
                 break;
             case "market":
-                inStock = marketStack.isEmpty();
+                inStock = !marketStack.isEmpty();
                 break;
             case "mine":
-                inStock = mineStack.isEmpty();
+                inStock = !mineStack.isEmpty();
                 break;
             case "militia":
-                inStock = militiaStack.isEmpty();
+                inStock = !militiaStack.isEmpty();
                 break;
             case "woodcutter":
-                inStock = woodcutterStack.isEmpty();
+                inStock = !woodcutterStack.isEmpty();
                 break;
             case "village":
-                inStock = villageStack.isEmpty();
+                inStock = !villageStack.isEmpty();
                 break;
             case "smithy":
-                inStock = smithyStack.isEmpty();
+                inStock = !smithyStack.isEmpty();
                 break;
             case "workshop":
-                inStock = workshopStack.isEmpty();
+                inStock = !workshopStack.isEmpty();
                 break;
             case "remodel":
-                inStock = marketStack.isEmpty();
+                inStock = !marketStack.isEmpty();
                 break;
             case "moat":
-                inStock = moatStack.isEmpty();
+                inStock = !moatStack.isEmpty();
                 break;
             case "estate":
-                inStock = estateStack.isEmpty();
+                inStock = !estateStack.isEmpty();
                 break;
             case "dutchy":
-                inStock = dutchyStack.isEmpty();
+                inStock = !dutchyStack.isEmpty();
                 break;
             case "province":
-                inStock = provinceStack.isEmpty();
+                inStock = !provinceStack.isEmpty();
                 break;
             default:
                 System.out.println("This default statement should never be reached");

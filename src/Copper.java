@@ -20,7 +20,7 @@ class Copper implements Card {
 
     @Override
     public Action getAction() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return new Action();
     }
 
     @Override
@@ -35,12 +35,12 @@ class Copper implements Card {
 
     @Override
     public int getValue() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return 0;
     }
 
     @Override
     public int getCashValue() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return 1;
     }
     
 }

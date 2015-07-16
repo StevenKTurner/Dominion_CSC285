@@ -15,17 +15,17 @@ class Village implements Card {
 
     @Override
     public int getCost() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return 1; //test value
     }
 
     @Override
     public Action getAction() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return new Action();
     }
 
     @Override
     public String getName() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return "village";
     }
 
     @Override
@@ -35,12 +35,12 @@ class Village implements Card {
 
     @Override
     public int getValue() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return 1; //Test value
     }
 
     @Override
     public int getCashValue() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return 0; //Test value
     }
     
 }
