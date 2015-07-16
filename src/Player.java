@@ -49,6 +49,10 @@ public class Player {
         discard(inPlay); //discard cards that have been played
         discard(hand); //discard any cards left in hand
         drawCards(HAND_LIMIT); //draw up to 5 cards
+        setActionPoints(0);
+        setBuys(0);
+        setActionCardCash(0);
+        setCash(0);
     }
     
     //Uses a card if the player has available actions, and reduces actions
@@ -266,6 +270,9 @@ public class Player {
         System.out.println("Buys " + player.getBuys());
         
         player.endTurn();
+        System.out.println("Turn ended");
+        System.out.println("Cash " + player.getCash());
+        System.out.println("Buys " + player.getBuys());
         
         System.out.println("Score " + player.scoreDeck());
         
