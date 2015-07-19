@@ -13,7 +13,7 @@ class Militia implements Card {
     private String name = "militia";
     private String type = "Action";
     private int cost = 4;
-    private Action action; //+2 Cash, Each other player discards down to 3 cards
+    private Action action = new MilitiaAction(); //+2 Cash, Each other player discards down to 3 cards
     private int value = 0;
     private int cashValue = 0;
     private boolean attack = true;

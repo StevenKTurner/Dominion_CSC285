@@ -8,15 +8,55 @@
  *
  * @author n00000158
  */
-public class Province {
+public class Province implements Card{
     
     private String name = "Province";
     private String type = "Victory Point";
     private int cost = 8;
-    private Action action; //+1 Buy, +2 Cash
+    private Action action = null; 
     private int value = 6;
     private int cashValue = 0;
     private boolean attack = false;
     private boolean reaction = false;
+
+    @Override
+    public String getName() {
+        return name;
+    }
+
+    @Override
+    public String getType() {
+        return type;
+    }
+
+    @Override
+    public int getCost() {
+        return cost;
+    }
+
+    @Override
+    public Action getAction() {
+        return action;
+    }
+
+    @Override
+    public int getValue() {
+        return value;
+    }
+
+    @Override
+    public int getCashValue() {
+        return cashValue;
+    }
+
+    @Override
+    public boolean isAttack() {
+        return attack;
+    }
+
+    @Override
+    public boolean isReaction() {
+        return reaction;
+    }
     
 }

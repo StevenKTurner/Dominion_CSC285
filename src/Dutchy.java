@@ -8,15 +8,55 @@
  *
  * @author n00000158
  */
-public class Dutchy {
+public class Dutchy implements Card{
     
     private String name = "Dutchy";
     private String type = "Victory Point";
     private int cost = 5;
-    private Action action; //+1 Buy, +2 Cash
-    private int value = 0;
-    private int cashValue = 3;
+    private Action action = null; 
+    private int value = 3;
+    private int cashValue = 0;
     private boolean attack = false;
     private boolean reaction = false;
+
+    @Override
+    public String getName() {
+        return name;
+    }
+
+    @Override
+    public String getType() {
+        return type;
+    }
+
+    @Override
+    public int getCost() {
+        return cost;
+    }
+
+    @Override
+    public Action getAction() {
+        return action;
+    }
+
+    @Override
+    public int getValue() {
+        return value;
+    }
+
+    @Override
+    public int getCashValue() {
+        return cashValue;
+    }
+
+    @Override
+    public boolean isAttack() {
+        return attack;
+    }
+
+    @Override
+    public boolean isReaction() {
+        return reaction;
+    }
     
 }

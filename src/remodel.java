@@ -8,12 +8,12 @@
  *
  * @author n00000158
  */
-public class remodel implements Card{
+public class Remodel implements Card{
     
     private String name = "Remodel";
     private String type = "Action";
     private int cost = 4;
-    private Action action; //......
+    private Action action = new RemodelAction(); //......
     private int value = 0;
     private int cashValue = 0;
     private boolean attack = false;
@@ -22,7 +22,7 @@ public class remodel implements Card{
     // Trash a treasure card from hand.  Gain a card costing up to 2 monies more than the trashed card.  
     
     
-        public remodel() {
+        public Remodel() {
     }
 
     @Override

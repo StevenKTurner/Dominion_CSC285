@@ -13,7 +13,7 @@ class Market implements Card {
     private String name = "market";
     private String type = "Action";
     private int cost = 5;
-    private Action action; //+1 Action, Draw 1 Card, +1 Buy, +1 Cash
+    private Action action = new MarketAction(); //+1 Action, Draw 1 Card, +1 Buy, +1 Cash
     private int value = 0;
     private int cashValue = 0;
     private boolean attack = false;

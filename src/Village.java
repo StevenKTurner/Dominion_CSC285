@@ -13,7 +13,7 @@ class Village implements Card {
     private String name = "Village";
     private String type = "Action";
     private int cost = 3;
-    private Action action; //gives 2 actions
+    private Action action = new VillageAction(); //gives 2 actions
     private int value = 0;
     private int cashValue = 0;
     private boolean attack = false;

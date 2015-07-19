@@ -8,12 +8,12 @@
  *
  * @author n00000158
  */
-public class moat implements Card{
+public class Moat implements Card{
     
     private String name = "Moat";
     private String type = "Action / Reaction";
     private int cost = 2;
-    private Action action; //gives 2 cards
+    private Action action = new MoatAction(); //gives 2 cards
     private int value = 0;
     private int cashValue = 0;
     private boolean attack = false;
@@ -23,7 +23,7 @@ public class moat implements Card{
     //when another player plays an attack card, you may reveal this from your hand.  If you do, you are uneffected be the attack.
     
     
-        public moat() {
+        public Moat() {
     }
 
     @Override

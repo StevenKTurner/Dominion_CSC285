@@ -13,7 +13,7 @@ class Woodcutter implements Card {
     private String name = "woodcutter";
     private String type = "Action";
     private int cost = 3;
-    private Action action; //+1 Buy, +2 Cash
+    private Action action = new WoodcutterAction(); //+1 Buy, +2 Cash
     private int value = 0;
     private int cashValue = 0;
     private boolean attack = false;

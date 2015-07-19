@@ -28,7 +28,7 @@ public class GameManager {
             players.add(new Player(name));
         }
         activePlayer = players.get(0);
-        setCurrentTurn(new ActionTurn(this));
+        setCurrentTurn(new actionPhase(this));
     }
     
     //tests whether the end game conditions are tru

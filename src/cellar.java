@@ -8,13 +8,13 @@
  *
  * @author n00000158
  */
-public class cellar implements Card{
+public class Cellar implements Card{
     
     
     private String name = "Cellar";
     private String type = "Action";
     private int cost = 2;
-    private Action action; //gives 1 action, discard any number of cards.  +1 card per card discarded.
+    private Action action = new CellarAction(); //gives 1 action, discard any number of cards.  +1 card per card discarded.
     private int value = 0;
     private int cashValue = 0;
     private boolean attack = false;
@@ -22,7 +22,7 @@ public class cellar implements Card{
     
     // +1 action
     // Discard any number of cards.  +1 card per card discarded.
-        public cellar() {
+        public Cellar() {
     }
 
     @Override

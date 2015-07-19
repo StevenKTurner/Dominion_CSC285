@@ -13,7 +13,7 @@ class Mine implements Card {
     private String name = "mine";
     private String type = "Action";
     private int cost = 5;
-    private Action action; //Trash a Treasure card from your hand.  Gain a Treasure card costing up to 3 Cash more; put it into your hand
+    private Action action = new MineAction(); //Trash a Treasure card from your hand.  Gain a Treasure card costing up to 3 Cash more; put it into your hand
     private int value = 0;
     private int cashValue = 0;
     private boolean attack = false;
