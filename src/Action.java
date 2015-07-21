@@ -13,6 +13,10 @@ abstract public class Action {
         String newPhase;
         String description;
 
+        public void initialize(GameManager gm){
+            
+        }
+        
         public void description() {
             System.out.println(description);
         }
