@@ -8,47 +8,17 @@
  *
  * @author n00000158
  */
-public class Workshop implements Card{
+public class Workshop extends Card{
     
-    private String name = "Workshop";
-    private String type = "Action";
-    private int cost = 3;
-    private Action action = new WorkshopAction(); //buy a card with a value of up to 4
-    private int value = 4;
-    private int cashValue = 0;
-    private boolean attack = false;
-    private boolean reaction = false;
-    
-
-    public int getCost() {
-        return cost;
-    }
-
-    public Action getAction() {
-        return action;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public String getType() {
-        return type;
-    }
-
-    public int getValue() {
-        return value;
-    }
-
-    public int getCashValue() {
-        return cashValue;
-    }
-    
-    public boolean isAttack(){
-        return attack;
-    }
-    
-    public boolean isReaction(){
-        return reaction;
+    public Workshop(){
+       setName("workshop");
+       setType("Action");
+       setCost(3);
+       setAction(new WorkshopAction());
+       setValue(0);
+       setCashValue(0);
+       setAttack(false);
+       setReaction(false);
+       setImage("cardArt/workshop.jpg");
     }
 }

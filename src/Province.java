@@ -8,55 +8,17 @@
  *
  * @author n00000158
  */
-public class Province implements Card{
+public class Province extends Card{
     
-    private String name = "Province";
-    private String type = "Victory Point";
-    private int cost = 8;
-    private Action action = null; 
-    private int value = 6;
-    private int cashValue = 0;
-    private boolean attack = false;
-    private boolean reaction = false;
-
-    @Override
-    public String getName() {
-        return name;
+    public Province(){
+       setName("province");
+       setType("Victory Point");
+       setCost(8);
+       setAction(null);
+       setValue(6);
+       setCashValue(0);
+       setAttack(false);
+       setReaction(false);
+       setImage("cardArt/province.jpg");
     }
-
-    @Override
-    public String getType() {
-        return type;
-    }
-
-    @Override
-    public int getCost() {
-        return cost;
-    }
-
-    @Override
-    public Action getAction() {
-        return action;
-    }
-
-    @Override
-    public int getValue() {
-        return value;
-    }
-
-    @Override
-    public int getCashValue() {
-        return cashValue;
-    }
-
-    @Override
-    public boolean isAttack() {
-        return attack;
-    }
-
-    @Override
-    public boolean isReaction() {
-        return reaction;
-    }
-    
 }

@@ -8,56 +8,17 @@
  *
  * @author Steven
  */
-class Militia implements Card {
-    
-    private String name = "militia";
-    private String type = "Action";
-    private int cost = 4;
-    private Action action = new MilitiaAction(); //+2 Cash, Each other player discards down to 3 cards
-    private int value = 0;
-    private int cashValue = 0;
-    private boolean attack = true;
-    private boolean reaction = false;
+class Militia extends Card {
 
     public Militia() {
+       setName("militia");
+       setType("Action");
+       setCost(4);
+       setAction(new MilitiaAction());
+       setValue(0);
+       setCashValue(0);
+       setAttack(true);
+       setReaction(false);
+       setImage("cardArt/militia.jpg");
     }
-
-    @Override
-    public int getCost() {
-        return cost;
-    }
-
-    @Override
-    public Action getAction() {
-        return action;
-    }
-
-    @Override
-    public String getName() {
-        return name;
-    }
-
-    @Override
-    public String getType() {
-        return type;
-    }
-
-    @Override
-    public int getValue() {
-        return value;
-    }
-
-    @Override
-    public int getCashValue() {
-        return cashValue;
-    }
-    
-    public boolean isAttack(){
-        return attack;
-    }
-    
-    public boolean isReaction(){
-        return reaction;
-    }
-    
 }

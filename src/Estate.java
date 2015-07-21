@@ -8,55 +8,17 @@
  *
  * @author n00000158
  */
-public class Estate implements Card{
+public class Estate extends Card{
     
-    private String name = "Estate";
-    private String type = "Victory Point";
-    private int cost = 2;
-    private Action action = null; 
-    private int value = 1;
-    private int cashValue = 0;
-    private boolean attack = false;
-    private boolean reaction = false;
-
-    @Override
-    public String getName() {
-        return name;
+    public Estate(){
+       setName("Estate");
+       setType("Victory Point");
+       setCost(2);
+       setAction(null);
+       setValue(1);
+       setCashValue(0);
+       setAttack(false);
+       setReaction(false);
+       setImage("cardArt/estate.jpg");
     }
-
-    @Override
-    public String getType() {
-        return type;
-    }
-
-    @Override
-    public int getCost() {
-        return cost;
-    }
-
-    @Override
-    public Action getAction() {
-        return action;
-    }
-
-    @Override
-    public int getValue() {
-        return value;
-    }
-
-    @Override
-    public int getCashValue() {
-        return cashValue;
-    }
-
-    @Override
-    public boolean isAttack() {
-        return attack;
-    }
-
-    @Override
-    public boolean isReaction() {
-        return reaction;
-    }
-    
 }

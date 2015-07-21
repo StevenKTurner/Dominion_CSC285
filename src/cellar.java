@@ -8,58 +8,20 @@
  *
  * @author n00000158
  */
-public class Cellar implements Card{
-    
-    
-    private String name = "Cellar";
-    private String type = "Action";
-    private int cost = 2;
-    private Action action = new CellarAction(); //gives 1 action, discard any number of cards.  +1 card per card discarded.
-    private int value = 0;
-    private int cashValue = 0;
-    private boolean attack = false;
-    private boolean reaction = false;
+public class Cellar extends Card{
     
     // +1 action
     // Discard any number of cards.  +1 card per card discarded.
         public Cellar() {
+            setName("Cellar");
+            setType("Action");
+            setCost(2);
+            setAction(new CellarAction());//gives 1 action, discard any number of cards.  +1 card per card discarded.
+            setValue(0);
+            setCashValue(0);
+            setAttack(false);
+            setReaction(false);
+            setImage("cardArt/cellar.jpg");
     }
 
-    @Override
-    public int getCost() {
-        return cost;
-    }
-
-    @Override
-    public Action getAction() {
-        return action;
-    }
-
-    @Override
-    public String getName() {
-        return name;
-    }
-
-    @Override
-    public String getType() {
-        return type;
-    }
-
-    @Override
-    public int getValue() {
-        return value;
-    }
-
-    @Override
-    public int getCashValue() {
-        return cashValue;
-    }
-    
-    public boolean isAttack(){
-        return attack;
-    }
-    
-    public boolean isReaction(){
-        return reaction;
-    }
 }

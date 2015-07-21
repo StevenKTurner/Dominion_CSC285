@@ -8,7 +8,7 @@
  *
  * @author Steven
  */
-class Village implements Card {
+class Village extends Card {
     
     private String name = "Village";
     private String type = "Action";
@@ -20,44 +20,15 @@ class Village implements Card {
     private boolean reaction = false;
 
     public Village() {
+       setName("village");
+       setType("Action");
+       setCost(3);
+       setAction(new VillageAction());
+       setValue(0);
+       setCashValue(0);
+       setAttack(false);
+       setReaction(false);
+       setImage("cardArt/village.jpg");
     }
 
-    @Override
-    public int getCost() {
-        return cost;
-    }
-
-    @Override
-    public Action getAction() {
-        return action;
-    }
-
-    @Override
-    public String getName() {
-        return name;
-    }
-
-    @Override
-    public String getType() {
-        return type;
-    }
-
-    @Override
-    public int getValue() {
-        return value;
-    }
-
-    @Override
-    public int getCashValue() {
-        return cashValue;
-    }
-    
-    public boolean isAttack(){
-        return attack;
-    }
-    
-    public boolean isReaction(){
-        return reaction;
-    }
-    
 }

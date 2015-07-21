@@ -8,47 +8,17 @@
  *
  * @author n00000158
  */
-public class Smithy implements Card{
+public class Smithy extends Card{
     
-    private String name = "Smithy";
-    private String type = "Action";
-    private int cost = 4;
-    private Action action = new SmithyAction(); //gives 3 cards
-    private int value = 0;
-    private int cashValue = 0;
-    private boolean attack = false;
-    private boolean reaction = false;
-    
-
-    public int getCost() {
-        return cost;
-    }
-
-    public Action getAction() {
-        return action;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public String getType() {
-        return type;
-    }
-
-    public int getValue() {
-        return value;
-    }
-
-    public int getCashValue() {
-        return cashValue;
-    }
-    
-    public boolean isAttack(){
-        return attack;
-    }
-    
-    public boolean isReaction(){
-        return reaction;
+    public Smithy(){
+       setName("smithy");
+       setType("Action");
+       setCost(4);
+       setAction(new SmithyAction());
+       setValue(0);
+       setCashValue(0);
+       setAttack(false);
+       setReaction(false);
+       setImage("cardArt/smithy.jpg");
     }
 }

@@ -31,7 +31,7 @@ public class Player {
             deck.add(new Copper());
         }
         for (int i = 0; i < 3; i++){
-            deck.add(new Village()); //Should be an Estate or whatever the victory point card is
+            deck.add(new Estate());
         }
         deck = shuffleCards(deck);
         drawCards(HAND_LIMIT);
@@ -225,65 +225,65 @@ public class Player {
         cash += actionCardCash;
     }
     
-    public static void main(String[] args) {
-        Player player = new Player("Steven");
-        Store store = new Store();
-        store.createStacks();
-        
-        player.beginTurn();
-        player.setBuys(100);
-        player.addActionCardCash(100);
-        System.out.println("Actions " + player.getActionPoints());
-        System.out.println("Cash " + player.getCash());
-        System.out.println("Buys " + player.getBuys());
-        System.out.println("Starting Hand:");
-        for (int i = player.getHand().size()-1; i >= 0; i--){
-            System.out.println(player.getHand().get(i));
-        }
-        
-        System.out.println("Trashing first card");
-        player.trashCard(player.getHand().get(0), player.getHand());
-        System.out.println("Hand after trashing:");
-        for (int i = player.getHand().size()-1; i >= 0; i--){
-            System.out.println(player.getHand().get(i));
-        }
-        
-        System.out.println("Villages in Store: " + store.cardInStock(new Village()));
-        for (int i = 1; i <= 11; i++){
-            player.useBuy(store, new Village());
-        }
-        System.out.println("Villages in Store: " + store.cardInStock(new Village()));
-        Action action = player.useCard(player.getHand().get(0));
-        
-        System.out.println("Discard Pile:");
-        for (int i = player.getDiscardPile().size()-1; i >= 0; i--){
-            System.out.println(player.getDiscardPile().get(i));
-        }
-        System.out.println("In Play:");
-        for (int i = player.getInPlay().size()-1; i >= 0; i--){
-            System.out.println(player.getInPlay().get(i));
-        }
-        System.out.println("Hand:");
-        for (int i = player.getHand().size()-1; i >= 0; i--){
-            System.out.println(player.getHand().get(i));
-        }
-        System.out.println("Cash " + player.getCash());
-        System.out.println("Buys " + player.getBuys());
-        
-        player.endTurn();
-        System.out.println("Turn ended");
-        System.out.println("Cash " + player.getCash());
-        System.out.println("Buys " + player.getBuys());
-        
-        System.out.println("Score " + player.scoreDeck());
-        
-        System.out.println("Card Action: " + action);
+//    public static void main(String[] args) {
+//        Player player = new Player("Steven");
+//        Store store = new Store();
+//        store.createStacks();
+//        
+//        player.beginTurn();
+//        player.setBuys(100);
+//        player.addActionCardCash(100);
+//        System.out.println("Actions " + player.getActionPoints());
+//        System.out.println("Cash " + player.getCash());
+//        System.out.println("Buys " + player.getBuys());
+//        System.out.println("Starting Hand:");
+//        for (int i = player.getHand().size()-1; i >= 0; i--){
+//            System.out.println(player.getHand().get(i));
+//        }
+//        
+//        System.out.println("Trashing first card");
+//        player.trashCard(player.getHand().get(0), player.getHand());
+//        System.out.println("Hand after trashing:");
+//        for (int i = player.getHand().size()-1; i >= 0; i--){
+//            System.out.println(player.getHand().get(i));
+//        }
+//        
+//        System.out.println("Villages in Store: " + store.cardInStock(new Village()));
+//        for (int i = 1; i <= 11; i++){
+//            player.useBuy(store, new Village());
+//        }
+//        System.out.println("Villages in Store: " + store.cardInStock(new Village()));
+//        Action action = player.useCard(player.getHand().get(0));
+//        
+//        System.out.println("Discard Pile:");
+//        for (int i = player.getDiscardPile().size()-1; i >= 0; i--){
+//            System.out.println(player.getDiscardPile().get(i));
+//        }
+//        System.out.println("In Play:");
+//        for (int i = player.getInPlay().size()-1; i >= 0; i--){
+//            System.out.println(player.getInPlay().get(i));
+//        }
+//        System.out.println("Hand:");
+//        for (int i = player.getHand().size()-1; i >= 0; i--){
+//            System.out.println(player.getHand().get(i));
+//        }
+//        System.out.println("Cash " + player.getCash());
+//        System.out.println("Buys " + player.getBuys());
+//        
+//        player.endTurn();
+//        System.out.println("Turn ended");
+//        System.out.println("Cash " + player.getCash());
+//        System.out.println("Buys " + player.getBuys());
+//        
+//        System.out.println("Score " + player.scoreDeck());
+//        
+//        System.out.println("Card Action: " + action);
         
 //        System.out.println("Discard pile");
 //        for (int i = player.getDiscardPile().size()-1; i >=0; i--){
 //            System.out.println(player.getDiscardPile().get(i));
 //        }
-        
-    }
+//        
+//    }
     
 }

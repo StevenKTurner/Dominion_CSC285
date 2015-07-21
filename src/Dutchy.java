@@ -8,55 +8,18 @@
  *
  * @author n00000158
  */
-public class Dutchy implements Card{
-    
-    private String name = "Dutchy";
-    private String type = "Victory Point";
-    private int cost = 5;
-    private Action action = null; 
-    private int value = 3;
-    private int cashValue = 0;
-    private boolean attack = false;
-    private boolean reaction = false;
+public class Dutchy extends Card{
 
-    @Override
-    public String getName() {
-        return name;
-    }
-
-    @Override
-    public String getType() {
-        return type;
-    }
-
-    @Override
-    public int getCost() {
-        return cost;
-    }
-
-    @Override
-    public Action getAction() {
-        return action;
-    }
-
-    @Override
-    public int getValue() {
-        return value;
-    }
-
-    @Override
-    public int getCashValue() {
-        return cashValue;
-    }
-
-    @Override
-    public boolean isAttack() {
-        return attack;
-    }
-
-    @Override
-    public boolean isReaction() {
-        return reaction;
-    }
+   public Dutchy(){
+       setName("Dutchy");
+       setType("Victory Point");
+       setCost(5);
+       setAction(null);
+       setValue(3);
+       setCashValue(0);
+       setAttack(false);
+       setReaction(false);
+       setImage("cardArt/duchy.jpg");
+   }
     
 }

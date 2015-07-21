@@ -8,58 +8,18 @@
  *
  * @author n00000158
  */
-public class Remodel implements Card{
-    
-    private String name = "Remodel";
-    private String type = "Action";
-    private int cost = 4;
-    private Action action = new RemodelAction(); //......
-    private int value = 0;
-    private int cashValue = 0;
-    private boolean attack = false;
-    private boolean reaction = false;
-    
-    // Trash a treasure card from hand.  Gain a card costing up to 2 monies more than the trashed card.  
-    
-    
-        public Remodel() {
+public class Remodel extends Card{
+
+    public Remodel() {
+       setName("remodel");
+       setType("Action");
+       setCost(4);
+       setAction(new RemodelAction());
+       setValue(0);
+       setCashValue(0);
+       setAttack(false);
+       setReaction(false);
+       setImage("cardArt/remodel.jpg");
     }
 
-    @Override
-    public int getCost() {
-        return cost;
-    }
-
-    @Override
-    public Action getAction() {
-        return action;
-    }
-
-    @Override
-    public String getName() {
-        return name;
-    }
-
-    @Override
-    public String getType() {
-        return type;
-    }
-
-    @Override
-    public int getValue() {
-        return value;
-    }
-
-    @Override
-    public int getCashValue() {
-        return cashValue;
-    }
-    
-    public boolean isAttack(){
-        return attack;
-    }
-    
-    public boolean isReaction(){
-        return reaction;
-    }
 }

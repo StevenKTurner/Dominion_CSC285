@@ -44,19 +44,19 @@ public class Store {
               
         //How will the ten action card stack ArrayLists be populated with ten 
         //cards without having to use ten separate for loops? 
-        fillDeck(cellarStack, new Cellar());
-        fillDeck(marketStack, new Market());
-        fillDeck(mineStack, new Mine());
-        fillDeck(militiaStack, new Militia());
-        fillDeck(woodcutterStack, new Woodcutter());
-        fillDeck(villageStack, new Village());
-        fillDeck(smithyStack, new Smithy());
-        fillDeck(workshopStack, new Workshop());
-        fillDeck(remodelStack, new Remodel());
-        fillDeck(moatStack, new Moat());
-        fillDeck(estateStack, new Estate());
-        fillDeck(dutchyStack, new Dutchy());
-        fillDeck(provinceStack, new Province());
+        fillDeck(cellarStack, new Cellar(), 10);
+        fillDeck(marketStack, new Market(), 10);
+        fillDeck(mineStack, new Mine(), 10);
+        fillDeck(militiaStack, new Militia(), 10);
+        fillDeck(woodcutterStack, new Woodcutter(), 10);
+        fillDeck(villageStack, new Village(), 10);
+        fillDeck(smithyStack, new Smithy(), 10);
+        fillDeck(workshopStack, new Workshop(), 10);
+        fillDeck(remodelStack, new Remodel(), 10);
+        fillDeck(moatStack, new Moat(), 10);
+        fillDeck(estateStack, new Estate(), 12);
+        fillDeck(dutchyStack, new Dutchy(), 12);
+        fillDeck(provinceStack, new Province(), 12);
         
     }
     
@@ -178,10 +178,11 @@ public class Store {
         return inStock;
     }
     
- 
-    public void fillDeck(ArrayList<Card> arrayList, Card card) {
-        for (int i = 0; i <= arrayList.size(); i++) {
+ //Currently adds the same card 10 times to each deck, might be a problem in the future.
+    public void fillDeck(ArrayList<Card> arrayList, Card card, int amount) {
+        for (int i = 0; i <= amount-1; i++) {
             arrayList.add(i, card);
+//            System.out.println(card + " added");
         }
 }
 }

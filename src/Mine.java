@@ -8,56 +8,18 @@
  *
  * @author Steven
  */
-class Mine implements Card {
-    
-    private String name = "mine";
-    private String type = "Action";
-    private int cost = 5;
-    private Action action = new MineAction(); //Trash a Treasure card from your hand.  Gain a Treasure card costing up to 3 Cash more; put it into your hand
-    private int value = 0;
-    private int cashValue = 0;
-    private boolean attack = false;
-    private boolean reaction = false;
+class Mine extends Card {
 
     public Mine() {
+       setName("mine");
+       setType("Action");
+       setCost(5);
+       setAction(new MineAction());
+       setValue(0);
+       setCashValue(0);
+       setAttack(false);
+       setReaction(false);
+       setImage("cardArt/mine.jpg");
     }
 
-    @Override
-    public int getCost() {
-        return cost;
-    }
-
-    @Override
-    public Action getAction() {
-        return action;
-    }
-
-    @Override
-    public String getName() {
-        return name;
-    }
-
-    @Override
-    public String getType() {
-        return type;
-    }
-
-    @Override
-    public int getValue() {
-        return value;
-    }
-
-    @Override
-    public int getCashValue() {
-        return cashValue;
-    }
-    
-    public boolean isAttack(){
-        return attack;
-    }
-    
-    public boolean isReaction(){
-        return reaction;
-    }
-    
 }

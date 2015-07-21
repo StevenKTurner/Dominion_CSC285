@@ -8,56 +8,18 @@
  *
  * @author Steven
  */
-class Woodcutter implements Card {
-    
-    private String name = "woodcutter";
-    private String type = "Action";
-    private int cost = 3;
-    private Action action = new WoodcutterAction(); //+1 Buy, +2 Cash
-    private int value = 0;
-    private int cashValue = 0;
-    private boolean attack = false;
-    private boolean reaction = false;
+class Woodcutter extends Card {
 
     public Woodcutter() {
+       setName("woodcutter");
+       setType("Action");
+       setCost(3);
+       setAction(new WoodcutterAction());
+       setValue(0);
+       setCashValue(0);
+       setAttack(false);
+       setReaction(false);
+       setImage("cardArt/woodcutter.jpg");
     }
 
-    @Override
-    public int getCost() {
-        return cost;
-    }
-
-    @Override
-    public Action getAction() {
-        return action;
-    }
-
-    @Override
-    public String getName() {
-        return name;
-    }
-
-    @Override
-    public String getType() {
-        return type;
-    }
-
-    @Override
-    public int getValue() {
-        return value;
-    }
-
-    @Override
-    public int getCashValue() {
-        return cashValue;
-    }
-    
-    public boolean isAttack(){
-        return attack;
-    }
-    
-    public boolean isReaction(){
-        return reaction;
-    }
-    
 }

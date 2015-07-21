@@ -8,56 +8,17 @@
  *
  * @author Steven
  */
-class Gold implements Card {
-    
-    private String name = "gold";
-    private String type = "Money";
-    private int cost = 6;
-    private Action action = null;
-    private int value = 0;
-    private int cashValue = 3;
-    private boolean attack = false;
-    private boolean reaction = false;
+class Gold extends Card {
 
     public Gold() {
+       setName("gold");
+       setType("Money");
+       setCost(6);
+       setAction(null);
+       setValue(0);
+       setCashValue(3);
+       setAttack(false);
+       setReaction(false);
+       setImage("cardArt/gold.jpg");
     }
-
-    @Override
-    public int getCost() {
-        return cost;
-    }
-
-    @Override
-    public Action getAction() {
-        return action;
-    }
-
-    @Override
-    public String getName() {
-        return name;
-    }
-
-    @Override
-    public String getType() {
-        return type;
-    }
-
-    @Override
-    public int getValue() {
-        return value;
-    }
-
-    @Override
-    public int getCashValue() {
-        return cashValue;
-    }
-    
-    public boolean isAttack(){
-        return attack;
-    }
-    
-    public boolean isReaction(){
-        return reaction;
-    }
-    
 }
