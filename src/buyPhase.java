@@ -8,6 +8,7 @@ public class buyPhase {
     }
     
     public int getPhase(){
+        return 0;
         
     }
     
@@ -15,5 +16,4 @@ public class buyPhase {
         
     }
     
-}
 }

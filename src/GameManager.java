@@ -23,7 +23,7 @@ public class GameManager {
     ArrayList<Integer> scores = new ArrayList<>(); //the players' scores at the end of the game, empty until the end of the game
     
     //adds the players to the player array and sets an active player
-    public void createGame(ArrayList<String> playerNames){
+    public GameManager(ArrayList<String> playerNames){
         for (String name : playerNames){
             players.add(new Player(name));
         }

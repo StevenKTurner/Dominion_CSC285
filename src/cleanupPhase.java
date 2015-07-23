@@ -14,5 +14,10 @@ public class cleanupPhase implements Turn {
     public void use() {
     
     }
+
+    @Override
+    public int getPhase() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
    
 }
