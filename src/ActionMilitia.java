@@ -1,5 +1,5 @@
-public class MilitiaAction extends Action {
-	public MilitiaAction() {
+public class ActionMilitia extends Action {
+	public ActionMilitia() {
             
 	actionPointsGained = 0;
 	cashGained = 2;

@@ -14,7 +14,7 @@ class Market extends Card {
        setName("market");
        setType("Action");
        setCost(5);
-       setAction(new MarketAction());
+       setAction(new ActionMarket());
        setValue(0);
        setCashValue(0);
        setAttack(false);

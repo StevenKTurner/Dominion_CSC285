@@ -1,5 +1,5 @@
-public class WorkshopAction extends Action {
-	public WorkshopAction() {
+public class ActionWorkshop extends Action {
+	public ActionWorkshop() {
             
 	actionPointsGained = 0;
 	cashGained = 0;

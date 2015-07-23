@@ -14,7 +14,7 @@ public class Smithy extends Card{
        setName("smithy");
        setType("Action");
        setCost(4);
-       setAction(new SmithyAction());
+       setAction(new ActionSmithy());
        setValue(0);
        setCashValue(0);
        setAttack(false);

@@ -1,5 +1,5 @@
-public class RemodelAction extends Action {
-	public RemodelAction() {
+public class ActionRemodel extends Action {
+	public ActionRemodel() {
             
 	actionPointsGained = 0;
 	cashGained = 0;

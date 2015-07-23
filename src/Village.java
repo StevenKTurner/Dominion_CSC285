@@ -13,7 +13,7 @@ class Village extends Card {
     private String name = "Village";
     private String type = "Action";
     private int cost = 3;
-    private Action action = new VillageAction(); //gives 2 actions
+    private Action action = new ActionVillage(); //gives 2 actions
     private int value = 0;
     private int cashValue = 0;
     private boolean attack = false;
@@ -23,7 +23,7 @@ class Village extends Card {
        setName("village");
        setType("Action");
        setCost(3);
-       setAction(new VillageAction());
+       setAction(new ActionVillage());
        setValue(0);
        setCashValue(0);
        setAttack(false);

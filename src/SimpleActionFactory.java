@@ -1,13 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/**
- *
- * @author k11002227
- */
 public class SimpleActionFactory {
     
     public Action useAction(String name) {
@@ -16,25 +6,25 @@ public class SimpleActionFactory {
 		             
                 
                 if (name.equals("celler")) {
-                    action = new CellarAction(); 
+                    action = new ActionCellar(); 
                 }else if (name.equals("market")) {
-			action = new MarketAction();
+			action = new ActionMarket();
 		} else if (name.equals("militia")) {
-			action = new MilitiaAction();
+			action = new ActionMilitia();
 		} else if (name.equals("mine")) {
-			action = new MineAction();
+			action = new ActionMine();
 		} else if (name.equals("moat")) {
-			action = new MoatAction();
+			action = new ActionMoat();
 		} else if (name.equals("remodel")) {
-			action = new RemodelAction();
+			action = new ActionRemodel();
 		} else if (name.equals("smithy")) {
-			action = new SmithyAction();
+			action = new ActionSmithy();
 		} else if (name.equals("villageCard")) {
-			action = new WoodcutterAction();
+			action = new ActionWoodcutter();
 		} else if (name.equals("woodcutter")) {
-			action = new WoodcutterAction();
+			action = new ActionWoodcutter();
 		} else if (name.equals("workshop")) {
-			action = new WorkshopAction();
+			action = new ActionWorkshop();
 		}
 		return action;
     

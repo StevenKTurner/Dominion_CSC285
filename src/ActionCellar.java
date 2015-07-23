@@ -1,5 +1,5 @@
-public class CellarAction extends Action {
-	public CellarAction() {
+public class ActionCellar extends Action {
+	public ActionCellar() {
             
 	actionPointsGained = 1;
 	cashGained = 0;

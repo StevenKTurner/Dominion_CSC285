@@ -14,7 +14,7 @@ public class Moat extends Card{
        setName("moat");
        setType("Action / Reaction");
        setCost(2);
-       setAction(new MoatAction());
+       setAction(new ActionMoat());
        setValue(0);
        setCashValue(0);
        setAttack(false);

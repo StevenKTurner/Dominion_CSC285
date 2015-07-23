@@ -1,5 +1,5 @@
-public class MarketAction extends Action {
-	public MarketAction() {
+public class ActionMarket extends Action {
+	public ActionMarket() {
             
 	actionPointsGained = 1;
 	cashGained = 1;

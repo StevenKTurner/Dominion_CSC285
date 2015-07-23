@@ -3,7 +3,6 @@ abstract public class Action {
         int actionPoints;
         int cash;
         int buys;
-    
     //stuff not being passed in:
 	int actionPointsGained;
 	int cashGained;
@@ -19,14 +18,6 @@ abstract public class Action {
         
         public void description() {
             System.out.println(description);
-        }
-        
-	public void defend() {
-            if (phaseChange = false) {
-	}
-            else
-            {//STATE CHANGE TO newPhase
-                }
         }
 
 	public void gainCash() {
@@ -44,9 +35,10 @@ abstract public class Action {
                 System.out.println(actionPointsGained + " action(s) gained.");
 	}
         
+        //draws specified # of cards from top of deck
         public void drawCard() {
                 for (int i=0; i<drawGain; i--) {
-                    //hand.add(deck.get(0));
+                    hand.add(deck.get(0));
                 }
             
         }

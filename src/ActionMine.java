@@ -1,5 +1,5 @@
-public class MineAction extends Action {
-	public MineAction() {
+public class ActionMine extends Action {
+	public ActionMine() {
             
 	actionPointsGained = 0;
 	cashGained = 0;

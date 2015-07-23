@@ -14,7 +14,7 @@ public class Workshop extends Card{
        setName("workshop");
        setType("Action");
        setCost(3);
-       setAction(new WorkshopAction());
+       setAction(new ActionWorkshop());
        setValue(0);
        setCashValue(0);
        setAttack(false);

@@ -14,7 +14,7 @@ class Woodcutter extends Card {
        setName("woodcutter");
        setType("Action");
        setCost(3);
-       setAction(new WoodcutterAction());
+       setAction(new ActionWoodcutter());
        setValue(0);
        setCashValue(0);
        setAttack(false);
