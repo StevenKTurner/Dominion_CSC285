@@ -18,6 +18,9 @@ public class Player {
     private int cash;
     private int actionCardCash;
     private final int HAND_LIMIT = 5;
+    public enum Turn{ACTION, BUYING, FREEBIE, DISCARDING, TRASHING, WAITING};
+    public Turn playerTurn = Turn.WAITING;
+    private boolean discardInEffect = false;
     
     public Player(String name){
         
@@ -43,6 +46,7 @@ public class Player {
         setBuys(1);
         setActionCardCash(0);
         countCash(hand);
+        playerTurn = Turn.ACTION;
     }
     
     public void endTurn(){
@@ -53,6 +57,7 @@ public class Player {
         setBuys(0);
         setActionCardCash(0);
         setCash(0);
+        playerTurn = Turn.WAITING;
     }
     
     //Uses a card if the player has available actions, and reduces actions
@@ -223,6 +228,18 @@ public class Player {
             cash += card.getCashValue();
         }
         cash += actionCardCash;
+    }
+    
+    public boolean isDiscardInEffect(){
+        return discardInEffect;
+    }
+    
+    public void setDiscardInEffect(boolean tf){
+        discardInEffect = tf;
+    }
+    
+    public String getName(){
+        return name;
     }
     
 //    public static void main(String[] args) {

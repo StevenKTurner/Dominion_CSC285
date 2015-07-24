@@ -15,8 +15,7 @@ public class GameManager {
     
     ArrayList<Player> players = new ArrayList<>(); //list of all the players in the game
     Store store = new Store(); // the store for the game
-    Turn currentTurn;
-    Action currentAction;
+    Action currentAction; // I think the view will handle Actions now, not the GM.
     Player activePlayer; //The player whose turn it is
     boolean discardInEffect = false; //(may not be necessary) whether the players need to discard down in their turn due to Militia
     int tempHandLimit; //limit to draw down to
@@ -28,7 +27,8 @@ public class GameManager {
             players.add(new Player(name));
         }
         activePlayer = players.get(0);
-        setCurrentTurn(new actionPhase(this));
+        //setCurrentTurn(Player.Turn.ACTION);
+        activePlayer.beginTurn();
     }
     
     //tests whether the end game conditions are tru
@@ -48,15 +48,15 @@ public class GameManager {
     }
     
     //may need to change based on how actions work
-    public void handleAction(Action action){
-        currentAction = action;
-        currentAction.initialize(this);
-    }
+//    public void handleAction(Action action){
+//        currentAction = action;
+//        currentAction.initialize(this);
+//    }
     
     //Makes whatever the current turn is do its thing
-    public void initiateTurn(){
-        currentTurn.use();
-    }
+//    public void initiateTurn(){
+//        currentTurn.use();
+//    }
     
     public ArrayList<Player> getPlayers(){
         return players;
@@ -66,21 +66,36 @@ public class GameManager {
         return activePlayer;
     }
     
+    public void startNextPlayerTurn(){
+        activePlayer.endTurn();
+        int turnNumber = players.lastIndexOf(activePlayer);
+        if ((turnNumber+1) >= players.size()){
+            activePlayer = players.get(0);
+        } else{
+            activePlayer = players.get(turnNumber+1);
+        }
+        activePlayer.beginTurn();
+    }
+    
     public void setActivePlayer(Player player){
+        activePlayer.playerTurn = Player.Turn.WAITING;
         activePlayer = player;
+        activePlayer.playerTurn = Player.Turn.ACTION;
+        
     }
     
     public Store getStore(){
         return store;
     }
     
-    public Turn getCurrentTurn(){
-        return currentTurn;
-    }
-    
-    public void setCurrentTurn(Turn turn){
-        currentTurn = turn;
-    }
+//    These are Unnecessary, as playerTurn is public now.
+//    public Player.Turn getCurrentTurn(){
+//        return activePlayer.playerTurn;
+//    }
+//    
+//    public void setCurrentTurn(Player.Turn turn){
+//        activePlayer.playerTurn = turn;
+//    }
     
     public boolean isDiscardInEffect(){
         return discardInEffect;
