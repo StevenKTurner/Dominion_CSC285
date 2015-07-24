@@ -1,5 +1,5 @@
-public class WoodcutterAction extends Action {
-	public WoodcutterAction() {
+public class ActionWoodcutter extends Action {
+	public ActionWoodcutter() {
             
 	actionPointsGained = 0;
 	cashGained = 2;

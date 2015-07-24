@@ -16,7 +16,7 @@ public class Cellar extends Card{
             setName("Cellar");
             setType("Action");
             setCost(2);
-            setAction(new CellarAction());//gives 1 action, discard any number of cards.  +1 card per card discarded.
+            setAction(new ActionCellar());//gives 1 action, discard any number of cards.  +1 card per card discarded.
             setValue(0);
             setCashValue(0);
             setAttack(false);

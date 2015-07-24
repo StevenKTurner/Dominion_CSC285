@@ -20,8 +20,9 @@ public class ActionCaller {
  
 		action = factory.useAction(name);
  
-		
-                action.defend();
+                //list of all parts of each card
+                //parts return 0 if no change
+		action.description();
                 action.gainCash();
 		action.gainBuys();
 		action.gainActions();

@@ -1,5 +1,5 @@
-public class MoatAction extends Action {
-	public MoatAction() {
+public class ActionMoat extends Action {
+	public ActionMoat() {
             
 	actionPointsGained = 0;
 	cashGained = 0;

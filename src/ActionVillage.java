@@ -1,5 +1,5 @@
-public class VillageAction extends Action {
-	public VillageAction() {
+public class ActionVillage extends Action {
+	public ActionVillage() {
             
 	actionPointsGained = 2;
 	cashGained = 0;

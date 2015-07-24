@@ -1,5 +1,5 @@
-public class SmithyAction extends Action {
-	public SmithyAction() {
+public class ActionSmithy extends Action {
+	public ActionSmithy() {
             
 	actionPointsGained = 0;
 	cashGained = 0;

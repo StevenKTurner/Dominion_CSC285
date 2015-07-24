@@ -14,7 +14,7 @@ public class Remodel extends Card{
        setName("remodel");
        setType("Action");
        setCost(4);
-       setAction(new RemodelAction());
+       setAction(new ActionRemodel());
        setValue(0);
        setCashValue(0);
        setAttack(false);

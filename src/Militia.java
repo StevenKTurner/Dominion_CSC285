@@ -14,7 +14,7 @@ class Militia extends Card {
        setName("militia");
        setType("Action");
        setCost(4);
-       setAction(new MilitiaAction());
+       setAction(new ActionMilitia());
        setValue(0);
        setCashValue(0);
        setAttack(true);

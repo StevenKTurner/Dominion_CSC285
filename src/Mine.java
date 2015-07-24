@@ -14,7 +14,7 @@ class Mine extends Card {
        setName("mine");
        setType("Action");
        setCost(5);
-       setAction(new MineAction());
+       setAction(new ActionMine());
        setValue(0);
        setCashValue(0);
        setAttack(false);
