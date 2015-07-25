@@ -177,7 +177,7 @@
         <Component class="javax.swing.JLabel" name="smithyImageLabel">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\Zach\Documents\GitHub\Dominion_CSC285\cardArt\smithy.jpg"/>
+              <Image iconType="3" name="/smithy.jpg"/>
             </Property>
           </Properties>
         </Component>
@@ -233,7 +233,7 @@
         <Component class="javax.swing.JLabel" name="militiaImageLabel">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\Zach\Documents\GitHub\Dominion_CSC285\cardArt\militia.jpg"/>
+              <Image iconType="3" name="/militia.jpg"/>
             </Property>
           </Properties>
         </Component>
@@ -291,7 +291,7 @@
         <Component class="javax.swing.JLabel" name="remodelImageIcon">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\Zach\Documents\GitHub\Dominion_CSC285\cardArt\remodel.jpg"/>
+              <Image iconType="3" name="/remodel.jpg"/>
             </Property>
           </Properties>
         </Component>
@@ -349,7 +349,7 @@
         <Component class="javax.swing.JLabel" name="marketsImageLabel">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\Zach\Documents\GitHub\Dominion_CSC285\cardArt\market.jpg"/>
+              <Image iconType="3" name="/market.jpg"/>
             </Property>
           </Properties>
         </Component>
@@ -405,7 +405,7 @@
         <Component class="javax.swing.JLabel" name="mineImageLabel">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\Zach\Documents\GitHub\Dominion_CSC285\cardArt\mine.jpg"/>
+              <Image iconType="3" name="/mine.jpg"/>
             </Property>
           </Properties>
         </Component>
@@ -465,7 +465,7 @@
         <Component class="javax.swing.JLabel" name="moatImageLabel">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\Zach\Documents\GitHub\Dominion_CSC285\cardArt\moat.jpg"/>
+              <Image iconType="3" name="/moat.jpg"/>
             </Property>
           </Properties>
         </Component>
@@ -527,7 +527,7 @@
         <Component class="javax.swing.JLabel" name="cellarImageLabel">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\Zach\Documents\GitHub\Dominion_CSC285\cardArt\cellar.jpg"/>
+              <Image iconType="3" name="/cellar.jpg"/>
             </Property>
           </Properties>
         </Component>
@@ -589,7 +589,7 @@
         <Component class="javax.swing.JLabel" name="villageImageLabel">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\Zach\Documents\GitHub\Dominion_CSC285\cardArt\village.jpg"/>
+              <Image iconType="3" name="/village.jpg"/>
             </Property>
           </Properties>
         </Component>
@@ -652,7 +652,7 @@
         <Component class="javax.swing.JLabel" name="workshopImageLabel">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\Zach\Documents\GitHub\Dominion_CSC285\cardArt\workshop.jpg"/>
+              <Image iconType="3" name="/workshop.jpg"/>
             </Property>
           </Properties>
         </Component>
@@ -713,7 +713,7 @@
         <Component class="javax.swing.JLabel" name="woodcutterImageLabel">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\Zach\Documents\GitHub\Dominion_CSC285\cardArt\woodcutter.jpg"/>
+              <Image iconType="3" name="/woodcutter.jpg"/>
             </Property>
           </Properties>
         </Component>
@@ -761,7 +761,7 @@
         <Component class="javax.swing.JLabel" name="copperImageLabel">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\Zach\Documents\GitHub\Dominion_CSC285\cardArt\copperSmall.jpg"/>
+              <Image iconType="3" name="/copperSmall.jpg"/>
             </Property>
           </Properties>
         </Component>
@@ -809,7 +809,7 @@
         <Component class="javax.swing.JLabel" name="silverImageLabel">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\Zach\Documents\GitHub\Dominion_CSC285\cardArt\silverSmall.jpg"/>
+              <Image iconType="3" name="/silverSmall.jpg"/>
             </Property>
           </Properties>
         </Component>
@@ -862,7 +862,7 @@
         <Component class="javax.swing.JLabel" name="goldImageLabel">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\Zach\Documents\GitHub\Dominion_CSC285\cardArt\goldSmall.jpg"/>
+              <Image iconType="3" name="/goldSmall.jpg"/>
             </Property>
           </Properties>
         </Component>
@@ -918,7 +918,7 @@
         <Component class="javax.swing.JLabel" name="provinceImageLabel">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\Zach\Documents\GitHub\Dominion_CSC285\cardArt\provinceSmall.jpg"/>
+              <Image iconType="3" name="/provinceSmall.jpg"/>
             </Property>
           </Properties>
         </Component>
@@ -977,7 +977,7 @@
         <Component class="javax.swing.JLabel" name="duchyImageLabel">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\Zach\Documents\GitHub\Dominion_CSC285\cardArt\duchySmall.jpg"/>
+              <Image iconType="3" name="/duchySmall.jpg"/>
             </Property>
           </Properties>
         </Component>
@@ -1033,7 +1033,7 @@
         <Component class="javax.swing.JLabel" name="estateImageLabel">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\Zach\Documents\GitHub\Dominion_CSC285\cardArt\estateSmall.jpg"/>
+              <Image iconType="3" name="/estateSmall.jpg"/>
             </Property>
           </Properties>
         </Component>

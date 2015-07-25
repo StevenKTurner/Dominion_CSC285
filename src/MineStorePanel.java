@@ -52,7 +52,7 @@ public class MineStorePanel extends StorePanel {
             }
         });
 
-        copperImageLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\Zach\\Documents\\GitHub\\Dominion_CSC285\\cardArt\\copperSmall.jpg")); // NOI18N
+        copperImageLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/copperSmall.jpg"))); // NOI18N
 
         javax.swing.GroupLayout copperPanelLayout = new javax.swing.GroupLayout(copperPanel);
         copperPanel.setLayout(copperPanelLayout);
@@ -83,7 +83,7 @@ public class MineStorePanel extends StorePanel {
             }
         });
 
-        silverImageLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\Zach\\Documents\\GitHub\\Dominion_CSC285\\cardArt\\silverSmall.jpg")); // NOI18N
+        silverImageLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/silverSmall.jpg"))); // NOI18N
 
         javax.swing.GroupLayout silverPanelLayout = new javax.swing.GroupLayout(silverPanel);
         silverPanel.setLayout(silverPanelLayout);
@@ -116,7 +116,7 @@ public class MineStorePanel extends StorePanel {
             }
         });
 
-        goldImageLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\Zach\\Documents\\GitHub\\Dominion_CSC285\\cardArt\\goldSmall.jpg")); // NOI18N
+        goldImageLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/goldSmall.jpg"))); // NOI18N
 
         javax.swing.GroupLayout goldPanelLayout = new javax.swing.GroupLayout(goldPanel);
         goldPanel.setLayout(goldPanelLayout);

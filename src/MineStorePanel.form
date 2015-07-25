@@ -94,7 +94,7 @@
         <Component class="javax.swing.JLabel" name="copperImageLabel">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\Zach\Documents\GitHub\Dominion_CSC285\cardArt\copperSmall.jpg"/>
+              <Image iconType="3" name="/copperSmall.jpg"/>
             </Property>
           </Properties>
         </Component>
@@ -142,7 +142,7 @@
         <Component class="javax.swing.JLabel" name="silverImageLabel">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\Zach\Documents\GitHub\Dominion_CSC285\cardArt\silverSmall.jpg"/>
+              <Image iconType="3" name="/silverSmall.jpg"/>
             </Property>
           </Properties>
         </Component>
@@ -195,7 +195,7 @@
         <Component class="javax.swing.JLabel" name="goldImageLabel">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\Zach\Documents\GitHub\Dominion_CSC285\cardArt\goldSmall.jpg"/>
+              <Image iconType="3" name="/goldSmall.jpg"/>
             </Property>
           </Properties>
         </Component>
