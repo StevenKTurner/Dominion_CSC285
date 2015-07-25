@@ -12,11 +12,12 @@ public class Player {
     private ArrayList<Card> hand; //Hand object that holds the cards for each turn
     private ArrayList<Card> deck; //Deck object which holds the player's cards
     private ArrayList<Card> discardPile; //Discard object which hold discarded cards
-    private ArrayList<Card> inPlay; //Cards that have been used but not discarded yet
+    public ArrayList<Card> inPlay; //Cards that have been used but not discarded yet
     private int actionPoints; //the number of actions the player has per turn
     private int buys; //the number of buys the player has per turn
     private int cash;
     private int actionCardCash;
+    private int freebieValue;
     private final int HAND_LIMIT = 5;
     public enum Turn{ACTION, BUYING, FREEBIE, DISCARDING, TRASHING, WAITING};
     public Turn playerTurn = Turn.WAITING;
