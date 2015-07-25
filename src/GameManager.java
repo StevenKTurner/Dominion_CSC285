@@ -23,16 +23,18 @@ public class GameManager {
     
     //adds the players to the player array and sets an active player
     public GameManager(ArrayList<String> playerNames){
+        store.createStacks();
         for (String name : playerNames){
             players.add(new Player(name));
         }
         activePlayer = players.get(0);
-        //setCurrentTurn(Player.Turn.ACTION);
         activePlayer.beginTurn();
     }
     
     //tests whether the end game conditions are tru
     public boolean isEndGame(){
+//        System.out.println("Empty Stacks: " + store.countEmptyStacks());
+//        System.out.println("Province cards: " + store.cardInStock(new Province()));
         if (store.countEmptyStacks() || !store.cardInStock(new Province())){
             return true;
         } else return false;
@@ -67,6 +69,7 @@ public class GameManager {
     }
     
     public void startNextPlayerTurn(){
+//        System.out.println(activePlayer.getName() + "ends turn");
         activePlayer.endTurn();
         int turnNumber = players.lastIndexOf(activePlayer);
         if ((turnNumber+1) >= players.size()){
@@ -74,6 +77,7 @@ public class GameManager {
         } else{
             activePlayer = players.get(turnNumber+1);
         }
+//        System.out.println(activePlayer.getName() + " begins turn");
         activePlayer.beginTurn();
     }
     

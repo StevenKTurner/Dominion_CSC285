@@ -27,7 +27,7 @@ public class Store {
     ArrayList<Card> provinceStack = new ArrayList<>(12);
     
     //int variable to hold the number of empty store stacks.
-    int emptyStacks;
+//    int emptyStacks;
        
     public void createStacks () {
         //Adds the ten store stacks ArrayLists to one master ArrayList
@@ -115,6 +115,7 @@ public class Store {
         
         //Loops through the 10 action card stacks via the storeStacks "master"
         //ArrayList to count how many are empty.
+        int emptyStacks = 0;
         for (ArrayList<Card> storeStack : storeStacks) {
             if (storeStack.isEmpty()) {
                 emptyStacks++;

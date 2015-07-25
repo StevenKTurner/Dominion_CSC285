@@ -18,7 +18,7 @@ public class Player {
     private int cash;
     private int actionCardCash;
     private final int HAND_LIMIT = 5;
-    public enum Turn{ACTION, BUYING, FREEBIE, DISCARDING, TRASHING, WAITING};
+    public enum Turn{ACTION, BUYING, FREEBIE, DISCARDING, TRASHING, WAITING, MINING};
     public Turn playerTurn = Turn.WAITING;
     private boolean discardInEffect = false;
     
@@ -38,15 +38,20 @@ public class Player {
         }
         deck = shuffleCards(deck);
         drawCards(HAND_LIMIT);
-        
     }
     
     public void beginTurn(){
+//        discard(inPlay);
+//        discard(hand);
+//        drawCards(HAND_LIMIT);
         setActionPoints(1);
         setBuys(1);
         setActionCardCash(0);
         countCash(hand);
         playerTurn = Turn.ACTION;
+//        System.out.println(name + " Begins their turn");
+//        System.out.println(name + "'s hand is: " + hand + " at the beginning of their turn");
+//        System.out.println(name + "'s deck is: " + deck + " at the beginning of their turn");
     }
     
     public void endTurn(){
@@ -58,6 +63,8 @@ public class Player {
         setActionCardCash(0);
         setCash(0);
         playerTurn = Turn.WAITING;
+//        System.out.println(name +" turn ended");
+//        System.out.println(name + " hand is: " + hand + " at the end of their turn");
     }
     
     //Uses a card if the player has available actions, and reduces actions
@@ -121,6 +128,7 @@ public class Player {
             
             amount--;
         }
+//        System.out.println("drew cards: " + hand);
     }
     
     //tells hand to discard cards
@@ -129,6 +137,7 @@ public class Player {
             discardPile.add(cards.get(i));
             cards.remove(i);
         }
+//        System.out.println(name + " Discarded " + cards);
     }
     
     public void discard(Card card){

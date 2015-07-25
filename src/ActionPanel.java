@@ -32,6 +32,7 @@ public class ActionPanel extends PlayerPanel{
     private JPanel inPlayPanel;
     private ArrayList<JButton> cardButtons = new ArrayList<JButton>();
     private JButton endButton;
+    private JButton buyTurnButton;
     
     public ActionPanel(View view){
         gm = view.getGameManager();
@@ -42,24 +43,30 @@ public class ActionPanel extends PlayerPanel{
         inPlayPanel = new JPanel();
 
         endButton = new JButton("End Turn");
-        endButton.addActionListener(new EndButtonListener(this));
+        endButton.addActionListener(new EndButtonListener(view));
+        
+        buyTurnButton = new JButton("Go to Buy Phase");
+        buyTurnButton.addActionListener(new BuyTurnButtonListener(view));
         
         this.add(statsPanel);
         this.add(inPlayPanel);
         this.add(handPanel);
         this.add(endButton);
         
+//        System.out.println("New Action Panel created");
         update();
     }
     
     private void populateCardButtons(){
 //        System.out.println("Populating buttons");
         //clearCardButtons();
+//        System.out.println(gm.getActivePlayer().getName() + "is populating Cards");
         for (Card card : gm.getActivePlayer().getHand()){
             cardButtons.add(new JButton(card.getImage()));
             handPanel.add(cardButtons.get(cardButtons.size()-1));
+//            System.out.println(card);
         }
-//        System.out.println("Buttons Populated: " + cardButtons.size());
+//        System.out.println("Cards Populated: " + cardButtons.size());
     }
     
     private void clearCardButtons(){
@@ -81,6 +88,7 @@ public class ActionPanel extends PlayerPanel{
     
     public void update(){
         clearCardButtons();
+//        System.out.println("Cards cleared");
         statsPanel.removeAll();
         
         //this.removeAll();
@@ -98,42 +106,63 @@ public class ActionPanel extends PlayerPanel{
         populateCardButtons();  
         
         statsPanel.add(endButton);
+        repaint();
         revalidate();
+//        System.out.println("ActionPanel updated");
     }
 
     private static class EndButtonListener implements ActionListener {
         
-        private ActionPanel apanel;
+        private View view;
         
         //Will need to switch this to take the View later on, as the End Button may need to recreate
         //The PlayerPanel itself in view as a different subclass.  Right now this is a proof of concept.
-        public EndButtonListener(ActionPanel apanel) {
-            this.apanel = apanel;
+        public EndButtonListener(View view) {
+            this.view = view;
         }
 
         @Override
         public void actionPerformed(ActionEvent e) {
-            apanel.gm.startNextPlayerTurn();
-            apanel.update();
+//            apanel.gm.startNextPlayerTurn();
+//            apanel.update();
+//            System.out.println("End Turn Button Pressed");
+            if (view.getGameManager().isEndGame()){
+                view.getGameManager().endGame();
+            }
+             view.getGameManager().startNextPlayerTurn();
+             view.update();
+        }
+    }
+
+    private static class BuyTurnButtonListener implements ActionListener {
+
+        private View view;
+        
+        public BuyTurnButtonListener(View view) {
+            this.view = view;
+        }
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            view.getGameManager().getActivePlayer().playerTurn = Player.Turn.BUYING;
+            view.update();
         }
     }
     
-        
-    public static void main(String[] args) {
-        ArrayList<String> players = new ArrayList<>();
-        players.add("Steven");
-        players.add("Neal");
-        GameManager test = new GameManager(players);
-        
-        test.getActivePlayer().useCard(test.getActivePlayer().getHand().get(2));
-        
-        
-        PlayerPanel playerPanel = new ActionPanel(new View());
-        JFrame frame = new JFrame();
-        frame.getContentPane().add(playerPanel);
-        frame.pack();
-        frame.setVisible(true);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-    }
-    
+//    public static void main(String[] args) {
+//        ArrayList<String> players = new ArrayList<>();
+//        players.add("Steven");
+//        players.add("Neal");
+//        GameManager test = new GameManager(players);
+//        
+//        test.getActivePlayer().useCard(test.getActivePlayer().getHand().get(2));
+//        
+//        
+//        PlayerPanel playerPanel = new ActionPanel(new View());
+//        JFrame frame = new JFrame();
+//        frame.getContentPane().add(playerPanel);
+//        frame.pack();
+//        frame.setVisible(true);
+//        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+//    }
 }
