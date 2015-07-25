@@ -1,12 +1,8 @@
 public class ActionWorkshop extends Action {
-	public ActionWorkshop() {
-            
-	actionPointsGained = 0;
-	cashGained = 0;
-	buysGained = 0;
-        drawGain = 0;
-        phaseChange = true;
-        newPhase = "workshop";
-        description = "Gain a card costing up to 4 Cash";
-	}
+
+    @Override
+    void initialize(View view) {
+        view.getGameManager().getActivePlayer().playerTurn = Player.Turn.FREEBIE;
+        view.getGameManager().getActivePlayer().setFreebieValue(4);
+    }
 }

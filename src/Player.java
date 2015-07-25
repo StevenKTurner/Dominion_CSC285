@@ -19,7 +19,7 @@ public class Player {
     private int actionCardCash;
     private int freebieValue;
     private final int HAND_LIMIT = 5;
-    public enum Turn{ACTION, BUYING, FREEBIE, DISCARDING, TRASHING, WAITING, MINING};
+    public enum Turn{ACTION, BUYING, FREEBIE, DISCARDING, TRASHING, REDRAWING, WAITING, MINING, REMODELING};
     public Turn playerTurn = Turn.WAITING;
     private boolean discardInEffect = false;
     
@@ -49,7 +49,9 @@ public class Player {
         setBuys(1);
         setActionCardCash(0);
         countCash(hand);
-        playerTurn = Turn.ACTION;
+        if(playerTurn != Turn.DISCARDING){
+            playerTurn = Turn.ACTION;
+        }
 //        System.out.println(name + " Begins their turn");
 //        System.out.println(name + "'s hand is: " + hand + " at the beginning of their turn");
 //        System.out.println(name + "'s deck is: " + deck + " at the beginning of their turn");
@@ -70,22 +72,14 @@ public class Player {
     
     //Uses a card if the player has available actions, and reduces actions
     //if done. Displays warning message if no actions left.
-    public Action useCard(Card card){
-        Action action;
+    public void useCard(Card card){
         if (actionPoints > 0){
-            //Call method(s) of card that may pass values back to player, such as extra buys
-            action = card.getAction();
-            //Then move the card to the "In Play" area so it can't be used again
-            //We're keeping it out of discard to prevent it from being shuffled back into the deck on the same turn
             inPlay.add(card);
             hand.remove(card);
             actionPoints--;
         } else {
             JOptionPane.showMessageDialog(null, "No Actions Left");
-            action = null;
         }
-        
-        return action;
     }
     
     //If player has enough money and buys, player removes card from the Store and places that card in their
@@ -250,6 +244,14 @@ public class Player {
     
     public String getName(){
         return name;
+    }
+    
+    public int getFreebieValue(){
+        return freebieValue;
+    }
+    
+    public void setFreebieValue(int i){
+        freebieValue = i;
     }
     
 //    public static void main(String[] args) {

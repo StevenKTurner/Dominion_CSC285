@@ -1,5 +1,6 @@
 abstract public class Action {
     //stuff being passed in:
+        View view;
         int actionPoints;
         int cash;
         int buys;
@@ -13,9 +14,7 @@ abstract public class Action {
         String newPhase;
         String description;
 
-        public void initialize(View view){
-            
-        }
+        abstract void initialize(View view);
         
         public void description() {
             System.out.println(description);
@@ -37,12 +36,12 @@ abstract public class Action {
 	}
         
         //draws specified # of cards from top of deck
-        public void drawCard() {
-                for (int i=0; i<drawGain; i--) {
-                    hand.add(deck.get(0));
-                }
-            
-        }
+//        public void drawCard() {
+//                for (int i=0; i<drawGain; i--) {
+//                    hand.add(deck.get(0));
+//                }
+//            
+//        }
      
 }
 

@@ -18,7 +18,7 @@ public class GameManager {
     Action currentAction; // I think the view will handle Actions now, not the GM.
     Player activePlayer; //The player whose turn it is
     boolean discardInEffect = false; //(may not be necessary) whether the players need to discard down in their turn due to Militia
-    int tempHandLimit; //limit to draw down to
+    private int tempHandLimit; //limit to draw down to
     ArrayList<Integer> scores = new ArrayList<>(); //the players' scores at the end of the game, empty until the end of the game
     
     //adds the players to the player array and sets an active player
@@ -115,6 +115,10 @@ public class GameManager {
     public void setDiscardInEffectFalse(){
         discardInEffect = false;
         tempHandLimit = 5;
+    }
+    
+    public int getTempHandLimit(){
+        return tempHandLimit;
     }
     
 }

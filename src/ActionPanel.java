@@ -62,7 +62,11 @@ public class ActionPanel extends PlayerPanel{
         //clearCardButtons();
 //        System.out.println(gm.getActivePlayer().getName() + "is populating Cards");
         for (Card card : gm.getActivePlayer().getHand()){
-            cardButtons.add(new JButton(card.getImage()));
+            JButton temp = new JButton(card.getImage());
+            if (card.getType() != "Money" && card.getType() != "Victory Point"){
+                temp.addActionListener(new CardButtonListener(view, card));
+            }
+            cardButtons.add(temp);
             handPanel.add(cardButtons.get(cardButtons.size()-1));
 //            System.out.println(card);
         }
@@ -148,7 +152,31 @@ public class ActionPanel extends PlayerPanel{
             view.update();
         }
     }
+
+    private static class CardButtonListener implements ActionListener {
+
+        View view;
+        Card card;
+        Action action;
+        
+        public CardButtonListener(View view, Card card) {
+            this.view = view;
+            this.action = card.getAction();
+            this.card = card;
+            
+        }
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            if (view.getGameManager().getActivePlayer().getActionPoints() > 0){
+                view.getGameManager().getActivePlayer().useCard(card);
+                action.initialize(view);
+                view.update();
+            }
+        }
+    }
     
+        
 //    public static void main(String[] args) {
 //        ArrayList<String> players = new ArrayList<>();
 //        players.add("Steven");

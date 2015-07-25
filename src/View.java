@@ -78,6 +78,8 @@ public class View {
         } else if (gm.getActivePlayer().playerTurn == Player.Turn.TRASHING){
             ppanel = new TrashPanel(this);
             //spanel = whatever the "can't buy anything" model of the store panel is
+        } else if (gm.getActivePlayer().playerTurn == Player.Turn.MINING){
+            
         }
             
         mainPanel.add(ppanel);
