@@ -40,7 +40,7 @@ public class View {
         gm = new GameManager(players);
         mainPanel = new JPanel(new GridBagLayout());
         ppanel = new ActionPanel(this);
-        spanel = new InactiveStorePanel(view);
+        spanel = new InactiveStorePanel(this);
         
         mainPanel.add(ppanel);
         mainPanel.add(spanel);
@@ -78,13 +78,9 @@ public class View {
             spanel = new FreebieStorePanel(this);
         } else if (gm.getActivePlayer().playerTurn == Player.Turn.TRASHING){
             ppanel = new TrashPanel(this);
-<<<<<<< HEAD
             //spanel = whatever the "can't buy anything" model of the store panel is
         } else if (gm.getActivePlayer().playerTurn == Player.Turn.MINING){
-            
-=======
             spanel = new InactiveStorePanel(this);
->>>>>>> ca316624b5c83a47ed62d0e8d3f7b07c441e6708
         }
             
         mainPanel.add(ppanel);
