@@ -11,7 +11,7 @@
 public class MineStorePanel extends StorePanel {
 
     //freebieValue needs to be accessed from the ActionRemodel 
-    Store store = new Store();
+    Store store;
     Player player = new Player("Current Player");
     Card card;
     /**
@@ -20,6 +20,7 @@ public class MineStorePanel extends StorePanel {
     public MineStorePanel(View view) {
         GameManager gm = view.getGameManager();
         player = gm.getActivePlayer();
+        store = gm.getStore();
         initComponents();
     }
 
