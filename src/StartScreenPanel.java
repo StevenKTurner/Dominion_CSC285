@@ -9,11 +9,13 @@
  * @author User
  */
 
-import java.awt.*; 
-import java.awt.event.*; 
+import static java.lang.Integer.parseInt; 
+import java.util.ArrayList;
 import javax.swing.JFrame;
 public class StartScreenPanel extends JFrame {
 
+    int numberOfPlayers;
+    ArrayList playerNames = new ArrayList<String>();
     /**
      * Creates new form NewJFrame
      */
@@ -30,6 +32,7 @@ public class StartScreenPanel extends JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        choice1 = new java.awt.Choice();
         jPanel2 = new javax.swing.JPanel();
         DominionLabel = new javax.swing.JLabel();
         NumberPlayersTextField = new javax.swing.JTextField();
@@ -55,9 +58,9 @@ public class StartScreenPanel extends JFrame {
         NumberPlayersLabel.setText("Number of Players");
 
         NumberPlayerButton.setText("Enter");
-        NumberPlayerButton.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                NumberPlayerButtonMouseClicked(evt);
+        NumberPlayerButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                NumberPlayerButtonActionPerformed(evt);
             }
         });
 
@@ -65,15 +68,20 @@ public class StartScreenPanel extends JFrame {
         PlayerNamesLabel.setText("Players Names");
 
         PlayerNameButton.setText("Next");
-        PlayerNameButton.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                PlayerNameButtonMouseClicked(evt);
+        PlayerNameButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PlayerNameButtonActionPerformed(evt);
             }
         });
 
         PlayerNamesTextField.setText("Enter Number");
 
         StartGameButton.setText("Start Game");
+        StartGameButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                StartGameButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -115,21 +123,19 @@ public class StartScreenPanel extends JFrame {
                     .addComponent(NumberPlayersTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(NumberPlayersLabel)
                     .addComponent(NumberPlayerButton))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(PlayerNamesLabel)
                     .addComponent(PlayerNameButton)
                     .addComponent(PlayerNamesTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(48, 48, 48)
                 .addComponent(StartGameButton)
-                .addContainerGap(126, Short.MAX_VALUE))
+                .addContainerGap(119, Short.MAX_VALUE))
         );
 
         NumberPlayersTextField.getAccessibleContext().setAccessibleParent(NumberPlayersTextField);
         NumberPlayerButton.getAccessibleContext().setAccessibleParent(NumberPlayersTextField);
-        PlayerNameButton.getAccessibleContext().setAccessibleParent(PlayerNamesTextField);
         PlayerNamesTextField.getAccessibleContext().setAccessibleParent(PlayerNamesTextField);
-        StartGameButton.getAccessibleContext().setAccessibleParent(null);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -151,13 +157,21 @@ public class StartScreenPanel extends JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void NumberPlayerButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_NumberPlayerButtonMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_NumberPlayerButtonMouseClicked
+    private void NumberPlayerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NumberPlayerButtonActionPerformed
+        String string = NumberPlayersTextField.toString();
+        numberOfPlayers = parseInt(string);
+        
+    }//GEN-LAST:event_NumberPlayerButtonActionPerformed
 
-    private void PlayerNameButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PlayerNameButtonMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_PlayerNameButtonMouseClicked
+    private void PlayerNameButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PlayerNameButtonActionPerformed
+        String string = PlayerNamesTextField.toString();
+        playerNames.add(string);
+    }//GEN-LAST:event_PlayerNameButtonActionPerformed
+
+    private void StartGameButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_StartGameButtonActionPerformed
+        View view = new View();
+        view.GameStart(playerNames);
+    }//GEN-LAST:event_StartGameButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -203,6 +217,7 @@ public class StartScreenPanel extends JFrame {
     private javax.swing.JLabel PlayerNamesLabel;
     private javax.swing.JTextField PlayerNamesTextField;
     private javax.swing.JButton StartGameButton;
+    private java.awt.Choice choice1;
     private javax.swing.JPanel jPanel2;
     // End of variables declaration//GEN-END:variables
 }

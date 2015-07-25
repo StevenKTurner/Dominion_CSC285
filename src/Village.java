@@ -10,7 +10,7 @@
  */
 class Village extends Card {
     
-    private String name = "Village";
+    private String name = "village";
     private String type = "Action";
     private int cost = 3;
     private Action action = new ActionVillage(); //gives 2 actions

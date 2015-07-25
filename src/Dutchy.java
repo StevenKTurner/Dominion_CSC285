@@ -11,7 +11,7 @@
 public class Dutchy extends Card{
 
    public Dutchy(){
-       setName("Dutchy");
+       setName("dutchy");
        setType("Victory Point");
        setCost(5);
        setAction(null);
