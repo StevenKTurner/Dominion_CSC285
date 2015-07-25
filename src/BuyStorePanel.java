@@ -8,7 +8,7 @@
  *
  * @author Zach
  */
-public class StorePanel extends javax.swing.JPanel {
+public class BuyStorePanel extends javax.swing.JPanel {
 
     Store store = new Store();
     Player player = new Player("Current Player");
@@ -16,7 +16,9 @@ public class StorePanel extends javax.swing.JPanel {
     /**
      * Creates new form StorePanelPanel
      */
-    public StorePanel() {
+    public BuyStorePanel(View view) {
+        GameManager gm = view.getGameManager();
+        player = gm.getActivePlayer();
         initComponents();
     }
 
@@ -100,7 +102,7 @@ public class StorePanel extends javax.swing.JPanel {
             }
         });
 
-        smithyLabel.setText("Smithys Left: X");
+        smithyLabel.setText("Smithys Left: 10");
 
         smithyImageLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\Zach\\Documents\\GitHub\\Dominion_CSC285\\cardArt\\smithy.jpg")); // NOI18N
 
@@ -141,7 +143,7 @@ public class StorePanel extends javax.swing.JPanel {
             }
         });
 
-        militiaLabel.setText("Militias Left: X");
+        militiaLabel.setText("Militias Left: 10");
 
         militiaImageLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\Zach\\Documents\\GitHub\\Dominion_CSC285\\cardArt\\militia.jpg")); // NOI18N
 
@@ -178,7 +180,7 @@ public class StorePanel extends javax.swing.JPanel {
             }
         });
 
-        remodelLabel.setText("Remodels Left: X");
+        remodelLabel.setText("Remodels Left: 10");
 
         remodelImageIcon.setIcon(new javax.swing.ImageIcon("C:\\Users\\Zach\\Documents\\GitHub\\Dominion_CSC285\\cardArt\\remodel.jpg")); // NOI18N
 
@@ -216,7 +218,7 @@ public class StorePanel extends javax.swing.JPanel {
             }
         });
 
-        marketLabel.setText("Markets Left: X");
+        marketLabel.setText("Markets Left: 10");
 
         marketsImageLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\Zach\\Documents\\GitHub\\Dominion_CSC285\\cardArt\\market.jpg")); // NOI18N
 
@@ -255,7 +257,7 @@ public class StorePanel extends javax.swing.JPanel {
             }
         });
 
-        mineLabel.setText("Mines Left: X");
+        mineLabel.setText("Mines Left: 10");
 
         mineImageLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\Zach\\Documents\\GitHub\\Dominion_CSC285\\cardArt\\mine.jpg")); // NOI18N
 
@@ -372,7 +374,7 @@ public class StorePanel extends javax.swing.JPanel {
             }
         });
 
-        villageLabel.setText("Villages Left: X");
+        villageLabel.setText("Villages Left: 10");
 
         villageImageLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\Zach\\Documents\\GitHub\\Dominion_CSC285\\cardArt\\village.jpg")); // NOI18N
 
@@ -413,7 +415,7 @@ public class StorePanel extends javax.swing.JPanel {
             }
         });
 
-        workshopLabel.setText("Workshops Left: X");
+        workshopLabel.setText("Workshops Left: 10");
 
         workshopImageLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\Zach\\Documents\\GitHub\\Dominion_CSC285\\cardArt\\workshop.jpg")); // NOI18N
 
@@ -454,7 +456,7 @@ public class StorePanel extends javax.swing.JPanel {
             }
         });
 
-        woodcutterLabel.setText("Woodcutters Left: X");
+        woodcutterLabel.setText("Woodcutters Left: 10");
 
         woodcutterImageLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\Zach\\Documents\\GitHub\\Dominion_CSC285\\cardArt\\woodcutter.jpg")); // NOI18N
 

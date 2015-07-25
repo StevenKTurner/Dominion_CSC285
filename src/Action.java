@@ -3,6 +3,7 @@ abstract public class Action {
         int actionPoints;
         int cash;
         int buys;
+        int freebieValue;
     //stuff not being passed in:
 	int actionPointsGained;
 	int cashGained;
@@ -12,7 +13,7 @@ abstract public class Action {
         String newPhase;
         String description;
 
-        public void initialize(GameManager gm){
+        public void initialize(View view){
             
         }
         
