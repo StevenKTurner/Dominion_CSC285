@@ -20,7 +20,7 @@ import javax.swing.JScrollPane;
  *
  * @author Steven
  */
-public class ActionPanel extends PlayerPanel{
+public class InactivePanel extends PlayerPanel{
     
     private GameManager gm;
     private View view;
@@ -34,7 +34,7 @@ public class ActionPanel extends PlayerPanel{
     private JButton endButton;
     private JButton buyTurnButton;
     
-    public ActionPanel(View view){
+    public InactivePanel(View view){
         gm = view.getGameManager();
         this.view = view;
         this.setLayout(new BoxLayout(this, BoxLayout.PAGE_AXIS));
@@ -52,7 +52,7 @@ public class ActionPanel extends PlayerPanel{
         this.add(inPlayPanel);
         this.add(handPanel);
         this.add(endButton);
-        this.add(buyTurnButton);
+//        this.add(buyTurnButton);
         
 //        System.out.println("New Action Panel created");
         update();
@@ -64,9 +64,9 @@ public class ActionPanel extends PlayerPanel{
 //        System.out.println(gm.getActivePlayer().getName() + "is populating Cards");
         for (Card card : gm.getActivePlayer().getHand()){
             JButton temp = new JButton(card.getImage());
-            if (card.getType() != "Money" && card.getType() != "Victory Point"){
-                temp.addActionListener(new CardButtonListener(view, card));
-            }
+//            if (card.getType() != "Money" && card.getType() != "Victory Point"){
+//                temp.addActionListener(new CardButtonListener(view, card));
+//            }
             cardButtons.add(temp);
             handPanel.add(cardButtons.get(cardButtons.size()-1));
 //            System.out.println(card);
@@ -111,7 +111,7 @@ public class ActionPanel extends PlayerPanel{
         populateCardButtons();  
         
         statsPanel.add(endButton);
-        statsPanel.add(buyTurnButton);
+//        statsPanel.add(buyTurnButton);
         repaint();
         revalidate();
 //        System.out.println("ActionPanel updated");
@@ -157,9 +157,9 @@ public class ActionPanel extends PlayerPanel{
 
     private static class CardButtonListener implements ActionListener {
 
-        private View view;
-        private Card card;
-        private Action action;
+        View view;
+        Card card;
+        Action action;
         
         public CardButtonListener(View view, Card card) {
             this.view = view;
@@ -174,7 +174,6 @@ public class ActionPanel extends PlayerPanel{
                 view.getGameManager().getActivePlayer().useCard(card);
                 action.initialize(view);
                 view.update();
-                //System.out.println("Card used");
             }
         }
     }

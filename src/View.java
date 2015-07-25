@@ -1,6 +1,7 @@
 
 import java.awt.GridBagLayout;
 import java.util.ArrayList;
+import javax.swing.BoxLayout;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
@@ -20,7 +21,6 @@ public class View {
     PlayerPanel ppanel;
     JPanel mainPanel;
     JFrame frame;
-    View view;
     
     public View(){
         
@@ -38,12 +38,13 @@ public class View {
     
     public void GameStart(ArrayList<String> players){
         gm = new GameManager(players);
-        mainPanel = new JPanel(new GridBagLayout());
+        mainPanel = new JPanel();
+        mainPanel.setLayout(new BoxLayout(mainPanel, BoxLayout.PAGE_AXIS));
         ppanel = new ActionPanel(this);
-        spanel = new InactiveStorePanel(view);
+        spanel = new InactiveStorePanel(this);
         
-        mainPanel.add(ppanel);
         mainPanel.add(spanel);
+        mainPanel.add(ppanel);
         
         frame = new JFrame();
         frame.getContentPane().add(mainPanel);
@@ -57,15 +58,16 @@ public class View {
     }
     
     public void update(){
-        mainPanel.removeAll();   
-//        if (gm.isEndGame()){
-//            //do the endgame screen
-//        } else 
-            if (gm.getActivePlayer().isDiscardInEffect()){
+        mainPanel.removeAll();  
+        ppanel.removeAll();
+        spanel.removeAll();
+        if (gm.isEndGame()){
+            //do the endgame screen
+        } else if (gm.getActivePlayer().isDiscardInEffect()){
             ppanel = new DiscardPanel(this);
             //spanel = whatever the "Can't buy anything" model of the store panel is
         } else if (gm.getActivePlayer().playerTurn == Player.Turn.BUYING){
-            ppanel = new PlayerBuyPanel(this);
+            ppanel = new InactivePanel(this);
             spanel = new BuyStorePanel(this);
         } else if (gm.getActivePlayer().playerTurn == Player.Turn.ACTION){
             ppanel = new ActionPanel(this);
@@ -78,23 +80,28 @@ public class View {
             spanel = new FreebieStorePanel(this);
         } else if (gm.getActivePlayer().playerTurn == Player.Turn.TRASHING){
             ppanel = new TrashPanel(this);
-<<<<<<< HEAD
-            //spanel = whatever the "can't buy anything" model of the store panel is
+            spanel = new InactiveStorePanel(this);
         } else if (gm.getActivePlayer().playerTurn == Player.Turn.MINING){
             
-=======
-            spanel = new InactiveStorePanel(this);
->>>>>>> ca316624b5c83a47ed62d0e8d3f7b07c441e6708
+        } else if (gm.getActivePlayer().playerTurn == Player.Turn.REDRAWING){
+            
+        } else if (gm.getActivePlayer().playerTurn == Player.Turn.REMODELING){
+            
+        } else if (gm.getActivePlayer().playerTurn == Player.Turn.WAITING){
+            System.out.println("Active player is waiting, this should never happen, something's wrong.");
         }
             
-        mainPanel.add(ppanel);
-        mainPanel.add(spanel);
         ppanel.repaint();
         ppanel.revalidate();
+        spanel.repaint();
+        spanel.revalidate();
+        mainPanel.add(spanel);
+        mainPanel.add(ppanel);
         mainPanel.repaint();
         mainPanel.revalidate();
         frame.repaint();
         frame.revalidate();
+        System.out.println(gm.getActivePlayer().playerTurn);
         //spanel.update();
     }
     
