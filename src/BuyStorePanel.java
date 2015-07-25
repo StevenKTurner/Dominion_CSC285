@@ -8,7 +8,7 @@
  *
  * @author Zach
  */
-public class BuyStorePanel extends javax.swing.JPanel {
+public class BuyStorePanel extends StorePanel {
 
     Store store = new Store();
     Player player = new Player("Current Player");
@@ -932,4 +932,9 @@ public class BuyStorePanel extends javax.swing.JPanel {
     private javax.swing.JLabel workshopLabel;
     private javax.swing.JPanel workshopPanel;
     // End of variables declaration//GEN-END:variables
+
+    @Override
+    void update() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }
