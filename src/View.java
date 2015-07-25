@@ -16,7 +16,7 @@ import javax.swing.JPanel;
  */
 public class View {
     GameManager gm;
-    StorePanel spanel;
+    StorePanelBlank spanel;
     PlayerPanel ppanel;
     JPanel mainPanel;
     
@@ -38,7 +38,7 @@ public class View {
         gm = new GameManager(players);
         mainPanel = new JPanel(new GridBagLayout());
         ppanel = new ActionPanel(this);
-        spanel = new StorePanel(gm.getStore());
+        spanel = new StorePanelBlank(gm.getStore());
         
         mainPanel.add(ppanel);
         mainPanel.add(spanel);
