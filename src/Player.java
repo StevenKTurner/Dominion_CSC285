@@ -122,7 +122,7 @@ public class Player {
             }
             hand.add(deck.get(0)); //adds top card of deck to hand
             deck.remove(0); // removes top card of deck
-            
+            countCash(hand);
             amount--;
         }
 //        System.out.println("drew cards: " + hand);
