@@ -10,10 +10,12 @@
  */
 
 import static java.lang.Integer.parseInt; 
+import java.util.ArrayList;
 import javax.swing.JFrame;
 public class StartScreenPanel extends JFrame {
 
     int numberOfPlayers;
+    ArrayList playerNames = new ArrayList<String>();
     /**
      * Creates new form NewJFrame
      */
@@ -75,6 +77,11 @@ public class StartScreenPanel extends JFrame {
         PlayerNamesTextField.setText("Enter Number");
 
         StartGameButton.setText("Start Game");
+        StartGameButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                StartGameButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -157,8 +164,14 @@ public class StartScreenPanel extends JFrame {
     }//GEN-LAST:event_NumberPlayerButtonActionPerformed
 
     private void PlayerNameButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PlayerNameButtonActionPerformed
-        
+        String string = PlayerNamesTextField.toString();
+        playerNames.add(string);
     }//GEN-LAST:event_PlayerNameButtonActionPerformed
+
+    private void StartGameButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_StartGameButtonActionPerformed
+        View view = new View();
+        view.GameStart(playerNames);
+    }//GEN-LAST:event_StartGameButtonActionPerformed
 
     /**
      * @param args the command line arguments

@@ -13,7 +13,7 @@ public class Cellar extends Card{
     // +1 action
     // Discard any number of cards.  +1 card per card discarded.
         public Cellar() {
-            setName("Cellar");
+            setName("cellar");
             setType("Action");
             setCost(2);
             setAction(new ActionCellar());//gives 1 action, discard any number of cards.  +1 card per card discarded.

@@ -11,7 +11,7 @@
 public class Estate extends Card{
     
     public Estate(){
-       setName("Estate");
+       setName("estate");
        setType("Victory Point");
        setCost(2);
        setAction(null);

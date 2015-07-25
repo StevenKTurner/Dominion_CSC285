@@ -20,7 +20,6 @@ public class View {
     PlayerPanel ppanel;
     JPanel mainPanel;
     JFrame frame;
-    View view;
     
     public View(){
         
