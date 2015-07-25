@@ -10,7 +10,7 @@ public class Store {
     ArrayList<ArrayList<Card>> storeStacks = new ArrayList<>();
     
     //Ten action cards store stacks.
-    ArrayList<Card> cellarStack = new ArrayList<>(10);
+    ArrayList<Card> cellarStack = new ArrayList<>();
     ArrayList<Card> marketStack = new ArrayList<>(10);
     ArrayList<Card> mineStack = new ArrayList<>(10);
     ArrayList<Card> militiaStack = new ArrayList<>(10);
@@ -28,6 +28,10 @@ public class Store {
     
     //int variable to hold the number of empty store stacks.
 //    int emptyStacks;
+    
+    public Store(){
+        createStacks();
+    }
        
     public void createStacks () {
         //Adds the ten store stacks ArrayLists to one master ArrayList
@@ -58,6 +62,7 @@ public class Store {
         fillDeck(dutchyStack, new Dutchy(), 12);
         fillDeck(provinceStack, new Province(), 12);
         
+        //System.out.println(cellarStack);
     }
     
     public void removeCard (Card card) {
@@ -135,6 +140,7 @@ public class Store {
         switch (name) {
             case "cellar":
                 inStock = !cellarStack.isEmpty();
+                System.out.println("Cellar Stack Contains: " + cellarStack);
                 break;
             case "market":
                 inStock = !marketStack.isEmpty();
@@ -183,7 +189,7 @@ public class Store {
     public void fillDeck(ArrayList<Card> arrayList, Card card, int amount) {
         for (int i = 0; i <= amount-1; i++) {
             arrayList.add(i, card);
-//            System.out.println(card + " added");
+            //System.out.println(card + " added");
         }
 }
 }

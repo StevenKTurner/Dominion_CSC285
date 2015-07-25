@@ -10,8 +10,8 @@
  */
 public class InactiveStorePanel extends StorePanel {
 
-    Store store = new Store();
-    Player player = new Player("Current Player");
+    Store store;
+    Player player;
     Card card;
     /**
      * Creates new form StorePanelPanel
@@ -19,6 +19,7 @@ public class InactiveStorePanel extends StorePanel {
     public InactiveStorePanel(View view) {
         GameManager gm = view.getGameManager();
         player = gm.getActivePlayer();
+        store = gm.getStore();
         initComponents();
     }
 

@@ -87,6 +87,8 @@ public class Player {
     public void useBuy(Store store, Card storeCard){
         boolean inStock = store.cardInStock(storeCard);
         Card card = storeCard;
+//        System.out.println(card.getCost());
+//        System.out.println(inStock);
         if ((cash >= card.getCost()) && (buys > 0) && (inStock)){
             discardPile.add(card);
             store.removeCard(card);

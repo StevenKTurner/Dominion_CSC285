@@ -13,17 +13,23 @@ import java.util.ArrayList;
  */
 public class GameManager {
     
-    ArrayList<Player> players = new ArrayList<>(); //list of all the players in the game
-    Store store = new Store(); // the store for the game
+    ArrayList<Player> players;
+    Store store; // the store for the game
     Action currentAction; // I think the view will handle Actions now, not the GM.
     Player activePlayer; //The player whose turn it is
-    boolean discardInEffect = false; //(may not be necessary) whether the players need to discard down in their turn due to Militia
+    boolean discardInEffect; //(may not be necessary) whether the players need to discard down in their turn due to Militia
     private int tempHandLimit; //limit to draw down to
-    ArrayList<Integer> scores = new ArrayList<>(); //the players' scores at the end of the game, empty until the end of the game
+    ArrayList<Integer> scores; //the players' scores at the end of the game, empty until the end of the game
     
     //adds the players to the player array and sets an active player
     public GameManager(ArrayList<String> playerNames){
-        store.createStacks();
+        //store.createStacks();
+        players = new ArrayList<>(); //list of all the players in the game
+        store = new Store(); // the store for the game
+        discardInEffect = false; //(may not be necessary) whether the players need to discard down in their turn due to Militia
+        tempHandLimit = 5; //limit to draw down to
+        scores = new ArrayList<>(); //the players' scores at the end of the game, empty until the end of the game
+        
         for (String name : playerNames){
             players.add(new Player(name));
         }

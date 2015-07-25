@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import javax.swing.BoxLayout;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -20,6 +21,7 @@ public class View {
     StorePanel spanel;
     PlayerPanel ppanel;
     JPanel mainPanel;
+    JScrollPane scroll;
     JFrame frame;
     
     public View(){
@@ -38,6 +40,7 @@ public class View {
     
     public void GameStart(ArrayList<String> players){
         gm = new GameManager(players);
+ 
         mainPanel = new JPanel();
         mainPanel.setLayout(new BoxLayout(mainPanel, BoxLayout.PAGE_AXIS));
         ppanel = new ActionPanel(this);
@@ -46,8 +49,10 @@ public class View {
         mainPanel.add(spanel);
         mainPanel.add(ppanel);
         
+        scroll = new JScrollPane(mainPanel, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
+        
         frame = new JFrame();
-        frame.getContentPane().add(mainPanel);
+        frame.getContentPane().add(scroll);
         frame.pack();
         frame.setVisible(true);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -58,6 +63,7 @@ public class View {
     }
     
     public void update(){
+        //scroll.removeAll();
         mainPanel.removeAll();  
         ppanel.removeAll();
         spanel.removeAll();
@@ -99,6 +105,9 @@ public class View {
         mainPanel.add(ppanel);
         mainPanel.repaint();
         mainPanel.revalidate();
+        //scroll = new JScrollPane(mainPanel, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
+        scroll.repaint();
+        scroll.revalidate();
         frame.repaint();
         frame.revalidate();
         System.out.println(gm.getActivePlayer().playerTurn);
