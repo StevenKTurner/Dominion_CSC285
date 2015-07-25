@@ -16,10 +16,11 @@ import javax.swing.JPanel;
  */
 public class View {
     GameManager gm;
-    StorePanelBlank spanel;
+    StorePanel spanel;
     PlayerPanel ppanel;
     JPanel mainPanel;
     JFrame frame;
+    View view;
     
     public View(){
         
@@ -39,7 +40,7 @@ public class View {
         gm = new GameManager(players);
         mainPanel = new JPanel(new GridBagLayout());
         ppanel = new ActionPanel(this);
-        spanel = new StorePanelBlank(gm.getStore());
+        spanel = new InactiveStorePanel(view);
         
         mainPanel.add(ppanel);
         mainPanel.add(spanel);
@@ -65,21 +66,25 @@ public class View {
             //spanel = whatever the "Can't buy anything" model of the store panel is
         } else if (gm.getActivePlayer().playerTurn == Player.Turn.BUYING){
             ppanel = new PlayerBuyPanel(this);
-            spanel = new StorePanel(this);
+            spanel = new BuyStorePanel(this);
         } else if (gm.getActivePlayer().playerTurn == Player.Turn.ACTION){
             ppanel = new ActionPanel(this);
-            //spanel = whatever the "can't buy anything" model of the store panel is
+            spanel = new InactiveStorePanel(this);
         } else if (gm.getActivePlayer().playerTurn == Player.Turn.DISCARDING){
             ppanel = new DiscardPanel(this);
-            //spanel = whatever the "can't buy anything" model of teh store panel is
+            spanel = new InactiveStorePanel(this);
         } else if (gm.getActivePlayer().playerTurn == Player.Turn.FREEBIE){
             ppanel = new FreebiePanel(this);
-            //spanel = whatever the store version of freebie panel is
+            spanel = new FreebieStorePanel(this);
         } else if (gm.getActivePlayer().playerTurn == Player.Turn.TRASHING){
             ppanel = new TrashPanel(this);
+<<<<<<< HEAD
             //spanel = whatever the "can't buy anything" model of the store panel is
         } else if (gm.getActivePlayer().playerTurn == Player.Turn.MINING){
             
+=======
+            spanel = new InactiveStorePanel(this);
+>>>>>>> ca316624b5c83a47ed62d0e8d3f7b07c441e6708
         }
             
         mainPanel.add(ppanel);

@@ -8,7 +8,7 @@
  *
  * @author Zach
  */
-public class FreebieStorePanel extends javax.swing.JPanel {
+public class FreebieStorePanel extends StorePanel {
 
     //freebieValue needs to be accessed from the ActionRemodel 
     Store store = new Store();
@@ -1000,4 +1000,9 @@ public class FreebieStorePanel extends javax.swing.JPanel {
     private javax.swing.JLabel workshopLabel;
     private javax.swing.JPanel workshopPanel;
     // End of variables declaration//GEN-END:variables
+
+    @Override
+    void update() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }

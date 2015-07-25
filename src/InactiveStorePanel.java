@@ -8,7 +8,7 @@
  *
  * @author Zach
  */
-public class BuyStorePanel extends StorePanel {
+public class InactiveStorePanel extends StorePanel {
 
     Store store = new Store();
     Player player = new Player("Current Player");
@@ -16,7 +16,7 @@ public class BuyStorePanel extends StorePanel {
     /**
      * Creates new form StorePanelPanel
      */
-    public BuyStorePanel(View view) {
+    public InactiveStorePanel(View view) {
         GameManager gm = view.getGameManager();
         player = gm.getActivePlayer();
         initComponents();
@@ -96,11 +96,6 @@ public class BuyStorePanel extends StorePanel {
         setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
 
         buySmithyButton.setText("Buy");
-        buySmithyButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buySmithyButtonActionPerformed(evt);
-            }
-        });
 
         smithyLabel.setText("Smithys Left: 10");
 
@@ -137,11 +132,6 @@ public class BuyStorePanel extends StorePanel {
         );
 
         buyMilitiaButton.setText("Buy");
-        buyMilitiaButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buyMilitiaButtonActionPerformed(evt);
-            }
-        });
 
         militiaLabel.setText("Militias Left: 10");
 
@@ -174,11 +164,6 @@ public class BuyStorePanel extends StorePanel {
         );
 
         buyRemodelButton.setText("Buy");
-        buyRemodelButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buyRemodelButtonActionPerformed(evt);
-            }
-        });
 
         remodelLabel.setText("Remodels Left: 10");
 
@@ -212,11 +197,6 @@ public class BuyStorePanel extends StorePanel {
         );
 
         buyMarketButton.setText("Buy");
-        buyMarketButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buyMarketButtonActionPerformed(evt);
-            }
-        });
 
         marketLabel.setText("Markets Left: 10");
 
@@ -251,11 +231,6 @@ public class BuyStorePanel extends StorePanel {
         );
 
         buyMineButton.setText("Buy");
-        buyMineButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buyMineButtonActionPerformed(evt);
-            }
-        });
 
         mineLabel.setText("Mines Left: 10");
 
@@ -288,11 +263,6 @@ public class BuyStorePanel extends StorePanel {
         );
 
         buyMoatButton.setText("Buy");
-        buyMoatButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buyMoatButtonActionPerformed(evt);
-            }
-        });
 
         moatLabel.setText("Moats Left: 10");
 
@@ -327,11 +297,6 @@ public class BuyStorePanel extends StorePanel {
         );
 
         buyCellarButton.setText("Buy");
-        buyCellarButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buyCellarButtonActionPerformed(evt);
-            }
-        });
 
         cellarLabel.setText("Cellars Left: 10");
 
@@ -368,11 +333,6 @@ public class BuyStorePanel extends StorePanel {
         );
 
         buyVillageButton.setText("Buy");
-        buyVillageButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buyVillageButtonActionPerformed(evt);
-            }
-        });
 
         villageLabel.setText("Villages Left: 10");
 
@@ -409,11 +369,6 @@ public class BuyStorePanel extends StorePanel {
         );
 
         buyWorkshopButton.setText("Buy");
-        buyWorkshopButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buyWorkshopButtonActionPerformed(evt);
-            }
-        });
 
         workshopLabel.setText("Workshops Left: 10");
 
@@ -450,11 +405,6 @@ public class BuyStorePanel extends StorePanel {
         );
 
         buyWoodcutterButton.setText("Buy");
-        buyWoodcutterButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buyWoodcutterButtonActionPerformed(evt);
-            }
-        });
 
         woodcutterLabel.setText("Woodcutters Left: 10");
 
@@ -490,11 +440,6 @@ public class BuyStorePanel extends StorePanel {
         );
 
         buyCopperButton.setText("Buy");
-        buyCopperButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buyCopperButtonActionPerformed(evt);
-            }
-        });
 
         copperImageLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\Zach\\Documents\\GitHub\\Dominion_CSC285\\cardArt\\copperSmall.jpg")); // NOI18N
 
@@ -522,11 +467,6 @@ public class BuyStorePanel extends StorePanel {
         );
 
         buySilverButton.setText("Buy");
-        buySilverButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buySilverButtonActionPerformed(evt);
-            }
-        });
 
         silverImageLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\Zach\\Documents\\GitHub\\Dominion_CSC285\\cardArt\\silverSmall.jpg")); // NOI18N
 
@@ -556,11 +496,6 @@ public class BuyStorePanel extends StorePanel {
         goldPanel.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         buyGoldButton.setText("Buy");
-        buyGoldButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buyGoldButtonActionPerformed(evt);
-            }
-        });
 
         goldImageLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\Zach\\Documents\\GitHub\\Dominion_CSC285\\cardArt\\goldSmall.jpg")); // NOI18N
 
@@ -588,11 +523,6 @@ public class BuyStorePanel extends StorePanel {
         );
 
         buyProvinceButton.setText("Buy");
-        buyProvinceButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buyProvinceButtonActionPerformed(evt);
-            }
-        });
 
         provinceLabel.setText("Provincess Left: 12");
 
@@ -625,11 +555,6 @@ public class BuyStorePanel extends StorePanel {
         );
 
         buyDuchyButton.setText("Buy");
-        buyDuchyButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buyDuchyButtonActionPerformed(evt);
-            }
-        });
 
         duchyLabel.setText("Duchys Left: 12");
 
@@ -664,11 +589,6 @@ public class BuyStorePanel extends StorePanel {
         );
 
         buyEstateButton.setText("Buy");
-        buyEstateButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buyEstateButtonActionPerformed(evt);
-            }
-        });
 
         estateLabel.setText("Estates Left: 12");
 
@@ -781,93 +701,8 @@ public class BuyStorePanel extends StorePanel {
     }// </editor-fold>//GEN-END:initComponents
 
     
-    //**************
-    // ActionListeners for buttons
-    // *************
-    
-    private void buyVillageButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buyVillageButtonActionPerformed
-        player.useBuy(store, new Village());
-        villageLabel.setText("Villages Left: " + store.villageStack.size());
-    }//GEN-LAST:event_buyVillageButtonActionPerformed
-
-    private void buySmithyButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buySmithyButtonActionPerformed
-        player.useBuy(store, new Smithy());
-        smithyLabel.setText("Smithys Left: " + store.smithyStack.size());
-    }//GEN-LAST:event_buySmithyButtonActionPerformed
-
-
-    private void buyProvinceButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buyProvinceButtonActionPerformed
-        player.useBuy(store, new Province());
-        provinceLabel.setText("Provinces Left: " + store.provinceStack.size());
-    }//GEN-LAST:event_buyProvinceButtonActionPerformed
 
     
-    private void buySilverButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buySilverButtonActionPerformed
-        player.useBuy(store, new Silver());
-        //We're not keeping track of the amount of treasure cards, so there is
-        //no label to update to display the amount of silver cards remaining.
-    }//GEN-LAST:event_buySilverButtonActionPerformed
-
-    private void buyGoldButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buyGoldButtonActionPerformed
-        player.useBuy(store, new Gold());
-        //No label
-    }//GEN-LAST:event_buyGoldButtonActionPerformed
-
-    private void buyMoatButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buyMoatButtonActionPerformed
-        player.useBuy(store, new Moat());
-        moatLabel.setText("Moats Left: " + store.moatStack.size());
-    }//GEN-LAST:event_buyMoatButtonActionPerformed
-
-    private void buyWorkshopButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buyWorkshopButtonActionPerformed
-        player.useBuy(store, new Workshop());
-        workshopLabel.setText("Workshops Left: " + store.workshopStack.size());
-    }//GEN-LAST:event_buyWorkshopButtonActionPerformed
-
-    private void buyCellarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buyCellarButtonActionPerformed
-        player.useBuy(store, new Cellar());
-        cellarLabel.setText("Cellars Left: " + store.cellarStack.size());
-    }//GEN-LAST:event_buyCellarButtonActionPerformed
-
-    private void buyWoodcutterButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buyWoodcutterButtonActionPerformed
-        player.useBuy(store, new Woodcutter());
-        woodcutterLabel.setText("Woodcutters Left: " + store.woodcutterStack.size());
-    }//GEN-LAST:event_buyWoodcutterButtonActionPerformed
-
-    private void buyRemodelButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buyRemodelButtonActionPerformed
-        player.useBuy(store, new Remodel());
-        remodelLabel.setText("Remodels Left: " + store.remodelStack.size());
-    }//GEN-LAST:event_buyRemodelButtonActionPerformed
-
-    private void buyMilitiaButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buyMilitiaButtonActionPerformed
-        player.useBuy(store, new Militia());
-        militiaLabel.setText("Militias Left: " + store.militiaStack.size());
-    }//GEN-LAST:event_buyMilitiaButtonActionPerformed
-
-    private void buyMarketButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buyMarketButtonActionPerformed
-        player.useBuy(store, new Market());
-        marketLabel.setText("Markets Left: " + store.marketStack.size());
-    }//GEN-LAST:event_buyMarketButtonActionPerformed
-
-    private void buyMineButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buyMineButtonActionPerformed
-        player.useBuy(store, new Mine());
-        mineLabel.setText("Mines Left: " + store.mineStack.size());
-    }//GEN-LAST:event_buyMineButtonActionPerformed
-
-    private void buyEstateButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buyEstateButtonActionPerformed
-        player.useBuy(store, new Estate());
-        estateLabel.setText("Estates Left: " + store.estateStack.size());
-    }//GEN-LAST:event_buyEstateButtonActionPerformed
-
-    private void buyDuchyButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buyDuchyButtonActionPerformed
-        player.useBuy(store, new Dutchy());
-        duchyLabel.setText("Duchys Left: " + store.dutchyStack.size());
-    }//GEN-LAST:event_buyDuchyButtonActionPerformed
-
-    private void buyCopperButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buyCopperButtonActionPerformed
-        player.useBuy(store, new Copper());
-        //No label
-    }//GEN-LAST:event_buyCopperButtonActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel MilitiaPanel;

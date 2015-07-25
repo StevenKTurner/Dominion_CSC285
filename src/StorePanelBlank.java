@@ -11,12 +11,16 @@ import javax.swing.JPanel;
  *
  * @author Steven
  */
-public class StorePanelBlank extends JPanel{
+public class StorePanelBlank extends StorePanel {
     
     Store store;
     
     public StorePanelBlank(Store store){
         this.store = store;
+    }
+    
+    public void update() {
+        
     }
     
     

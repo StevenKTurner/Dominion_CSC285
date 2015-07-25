@@ -8,7 +8,7 @@
  *
  * @author Zach
  */
-public class MineStorePanel extends javax.swing.JPanel {
+public class MineStorePanel extends StorePanel {
 
     //freebieValue needs to be accessed from the ActionRemodel 
     Store store = new Store();
@@ -170,9 +170,9 @@ public class MineStorePanel extends javax.swing.JPanel {
     
     private void gainSilverButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gainSilverButtonActionPerformed
         card = new Silver();
-        if (freebieValue <= card.getCost())
+        if (freebieValue == card.getCost())
         {
-            player.hand.add(card);
+            player.getHand().add(card);
         }
         //We're not keeping track of the amount of treasure cards, so there is
         //no label to update to display the amount of silver cards remaining.
@@ -180,18 +180,18 @@ public class MineStorePanel extends javax.swing.JPanel {
 
     private void gainGoldButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gainGoldButtonActionPerformed
         card = new Gold();
-        if (freebieValue <= card.getCost())
+        if (freebieValue == card.getCost())
         {
-            player.hand.add(card);
+            player.getHand().add(card);
         }
         //No label
     }//GEN-LAST:event_gainGoldButtonActionPerformed
 
     private void gainCopperButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gainCopperButtonActionPerformed
         card = new Copper();
-        if (freebieValue <= card.getCost())
+        if (freebieValue == card.getCost())
         {
-            player.hand.add(card);
+            player.getHand().add(card);
         }
         //No label
     }//GEN-LAST:event_gainCopperButtonActionPerformed
@@ -208,4 +208,9 @@ public class MineStorePanel extends javax.swing.JPanel {
     private javax.swing.JLabel silverImageLabel;
     private javax.swing.JPanel silverPanel;
     // End of variables declaration//GEN-END:variables
+
+    @Override
+    void update() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }
