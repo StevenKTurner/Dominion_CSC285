@@ -24,6 +24,7 @@ public class Player {
     private boolean discardInEffect = false;
     private int amountToDiscard;
     private int lastTrashedCardValue;
+    private int specialDrawAmount;
     
     public Player(String name){
         
@@ -147,6 +148,7 @@ public class Player {
     public void trashCard(Card card, ArrayList<Card> source){
         lastTrashedCardValue = card.getCost();
         source.remove(card);
+        countCash(hand);
     }
     
     public int scoreDeck(){
@@ -277,6 +279,23 @@ public class Player {
     
     public int getLastTrashedCardValue(){
         return lastTrashedCardValue;
+    }
+    
+    public void setSpecialDrawAmount(int i){
+        specialDrawAmount = i;
+    }
+    
+    public int getSpecialDrawAmount(){
+        return specialDrawAmount;
+    }
+    
+    public void addSpecialDrawAmount(int i){
+        specialDrawAmount += i;
+    }
+    
+    public void addToHand(Card card){
+        hand.add(card);
+        countCash(hand);
     }
     
 //    public static void main(String[] args) {

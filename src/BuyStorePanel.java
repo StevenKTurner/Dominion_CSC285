@@ -13,14 +13,34 @@ public class BuyStorePanel extends StorePanel {
     Store store;
     Player player;
     Card card;
+    View view;
+    GameManager gm;
     /**
      * Creates new form StorePanelPanel
      */
     public BuyStorePanel(View view) {
-        GameManager gm = view.getGameManager();
+        this.view = view;
+        gm = view.getGameManager();
         player = gm.getActivePlayer();
         store = gm.getStore();
         initComponents();
+        updateLabels();
+    }
+    
+        private void updateLabels(){
+        villageLabel.setText("Villages Left: " + store.villageStack.size());
+        smithyLabel.setText("Smithys Left: " + store.smithyStack.size());
+        provinceLabel.setText("Provinces Left: " + store.provinceStack.size());
+        workshopLabel.setText("Workshops Left: " + store.workshopStack.size());
+        cellarLabel.setText("Cellars Left: " + store.cellarStack.size());
+        woodcutterLabel.setText("Woodcutters Left: " + store.woodcutterStack.size());
+        remodelLabel.setText("Remodels Left: " + store.remodelStack.size());
+        militiaLabel.setText("Militias Left: " + store.militiaStack.size());
+        marketLabel.setText("Markets Left: " + store.marketStack.size());
+        mineLabel.setText("Mines Left: " + store.mineStack.size());
+        estateLabel.setText("Estates Left: " + store.estateStack.size());
+        duchyLabel.setText("Duchys Left: " + store.dutchyStack.size());
+        moatLabel.setText("Moats Left: " + store.moatStack.size());
     }
 
     /**
@@ -105,6 +125,8 @@ public class BuyStorePanel extends StorePanel {
 
         smithyLabel.setText("Smithys Left: " + store.smithyStack.size());
 
+        smithyImageLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/smithy.jpg"))); // NOI18N
+
         javax.swing.GroupLayout smithyPanelLayout = new javax.swing.GroupLayout(smithyPanel);
         smithyPanel.setLayout(smithyPanelLayout);
         smithyPanelLayout.setHorizontalGroup(
@@ -144,6 +166,8 @@ public class BuyStorePanel extends StorePanel {
 
         militiaLabel.setText("Militias Left: " + store.militiaStack.size());
 
+        militiaImageLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/militia.jpg"))); // NOI18N
+
         javax.swing.GroupLayout MilitiaPanelLayout = new javax.swing.GroupLayout(MilitiaPanel);
         MilitiaPanel.setLayout(MilitiaPanelLayout);
         MilitiaPanelLayout.setHorizontalGroup(
@@ -163,7 +187,7 @@ public class BuyStorePanel extends StorePanel {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, MilitiaPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(militiaImageLabel)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(buyMilitiaButton)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(militiaLabel)
@@ -178,6 +202,8 @@ public class BuyStorePanel extends StorePanel {
         });
 
         remodelLabel.setText("Remodels Left: " + store.remodelStack.size());
+
+        remodelImageIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/remodel.jpg"))); // NOI18N
 
         javax.swing.GroupLayout remodelPanelLayout = new javax.swing.GroupLayout(remodelPanel);
         remodelPanel.setLayout(remodelPanelLayout);
@@ -199,7 +225,7 @@ public class BuyStorePanel extends StorePanel {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, remodelPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(remodelImageIcon)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(buyRemodelButton)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(remodelLabel)
@@ -214,6 +240,8 @@ public class BuyStorePanel extends StorePanel {
         });
 
         marketLabel.setText("Markets Left: " + store.marketStack.size());
+
+        marketsImageLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/market.jpg"))); // NOI18N
 
         javax.swing.GroupLayout marketPanelLayout = new javax.swing.GroupLayout(marketPanel);
         marketPanel.setLayout(marketPanelLayout);
@@ -252,6 +280,8 @@ public class BuyStorePanel extends StorePanel {
 
         mineLabel.setText("Mines Left: " + store.mineStack.size());
 
+        mineImageLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mine.jpg"))); // NOI18N
+
         javax.swing.GroupLayout minePanelLayout = new javax.swing.GroupLayout(minePanel);
         minePanel.setLayout(minePanelLayout);
         minePanelLayout.setHorizontalGroup(
@@ -271,7 +301,7 @@ public class BuyStorePanel extends StorePanel {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, minePanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(mineImageLabel)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(buyMineButton)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(mineLabel)
@@ -286,6 +316,8 @@ public class BuyStorePanel extends StorePanel {
         });
 
         moatLabel.setText("Moats Remaining: " + store.moatStack.size());
+
+        moatImageLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/moat.jpg"))); // NOI18N
 
         javax.swing.GroupLayout moatPanelLayout = new javax.swing.GroupLayout(moatPanel);
         moatPanel.setLayout(moatPanelLayout);
@@ -307,7 +339,7 @@ public class BuyStorePanel extends StorePanel {
             moatPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, moatPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(moatImageLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 234, Short.MAX_VALUE)
+                .addComponent(moatImageLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(buyMoatButton)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -324,6 +356,8 @@ public class BuyStorePanel extends StorePanel {
 
         cellarLabel.setText("Cellars Left: " + store.cellarStack.size());
 
+        cellarImageLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cellar.jpg"))); // NOI18N
+
         javax.swing.GroupLayout cellarPanelLayout = new javax.swing.GroupLayout(cellarPanel);
         cellarPanel.setLayout(cellarPanelLayout);
         cellarPanelLayout.setHorizontalGroup(
@@ -338,7 +372,7 @@ public class BuyStorePanel extends StorePanel {
                         .addComponent(buyCellarButton)
                         .addGap(62, 62, 62))))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, cellarPanelLayout.createSequentialGroup()
-                .addContainerGap(24, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(cellarLabel)
                 .addGap(54, 54, 54))
         );
@@ -351,7 +385,7 @@ public class BuyStorePanel extends StorePanel {
                 .addComponent(buyCellarButton)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(cellarLabel)
-                .addContainerGap(12, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         buyVillageButton.setText("Buy");
@@ -362,6 +396,8 @@ public class BuyStorePanel extends StorePanel {
         });
 
         villageLabel.setText("Villages Left: " + store.villageStack.size());
+
+        villageImageLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/village.jpg"))); // NOI18N
 
         javax.swing.GroupLayout villagePanelLayout = new javax.swing.GroupLayout(villagePanel);
         villagePanel.setLayout(villagePanelLayout);
@@ -402,6 +438,8 @@ public class BuyStorePanel extends StorePanel {
 
         workshopLabel.setText("Workshops Left: " + store.workshopStack.size());
 
+        workshopImageLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/workshop.jpg"))); // NOI18N
+
         javax.swing.GroupLayout workshopPanelLayout = new javax.swing.GroupLayout(workshopPanel);
         workshopPanel.setLayout(workshopPanelLayout);
         workshopPanelLayout.setHorizontalGroup(
@@ -418,14 +456,14 @@ public class BuyStorePanel extends StorePanel {
                     .addGroup(workshopPanelLayout.createSequentialGroup()
                         .addGap(42, 42, 42)
                         .addComponent(workshopLabel)))
-                .addContainerGap(12, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         workshopPanelLayout.setVerticalGroup(
             workshopPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, workshopPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(workshopImageLabel)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(buyWorkshopButton)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(workshopLabel)
@@ -440,6 +478,8 @@ public class BuyStorePanel extends StorePanel {
         });
 
         woodcutterLabel.setText("Woodcutters Left: " + store.woodcutterStack.size());
+
+        woodcutterImageLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/woodcutter.jpg"))); // NOI18N
 
         javax.swing.GroupLayout woodcutterPanelLayout = new javax.swing.GroupLayout(woodcutterPanel);
         woodcutterPanel.setLayout(woodcutterPanelLayout);
@@ -477,6 +517,8 @@ public class BuyStorePanel extends StorePanel {
             }
         });
 
+        copperImageLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/copperSmall.jpg"))); // NOI18N
+
         javax.swing.GroupLayout copperPanelLayout = new javax.swing.GroupLayout(copperPanel);
         copperPanel.setLayout(copperPanelLayout);
         copperPanelLayout.setHorizontalGroup(
@@ -506,6 +548,8 @@ public class BuyStorePanel extends StorePanel {
                 buySilverButtonActionPerformed(evt);
             }
         });
+
+        silverImageLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/silverSmall.jpg"))); // NOI18N
 
         javax.swing.GroupLayout silverPanelLayout = new javax.swing.GroupLayout(silverPanel);
         silverPanel.setLayout(silverPanelLayout);
@@ -539,6 +583,8 @@ public class BuyStorePanel extends StorePanel {
             }
         });
 
+        goldImageLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/goldSmall.jpg"))); // NOI18N
+
         javax.swing.GroupLayout goldPanelLayout = new javax.swing.GroupLayout(goldPanel);
         goldPanel.setLayout(goldPanelLayout);
         goldPanelLayout.setHorizontalGroup(
@@ -570,6 +616,8 @@ public class BuyStorePanel extends StorePanel {
         });
 
         provinceLabel.setText("Provinces Left: " + store.provinceStack.size());
+
+        provinceImageLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/provinceSmall.jpg"))); // NOI18N
 
         javax.swing.GroupLayout provincePanelLayout = new javax.swing.GroupLayout(provincePanel);
         provincePanel.setLayout(provincePanelLayout);
@@ -605,6 +653,8 @@ public class BuyStorePanel extends StorePanel {
         });
 
         duchyLabel.setText("Duchys Left: " + store.dutchyStack.size());
+
+        duchyImageLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/duchySmall.jpg"))); // NOI18N
 
         javax.swing.GroupLayout duchyPanelLayout = new javax.swing.GroupLayout(duchyPanel);
         duchyPanel.setLayout(duchyPanelLayout);
@@ -642,6 +692,8 @@ public class BuyStorePanel extends StorePanel {
         });
 
         estateLabel.setText("Estates Left: " + store.estateStack.size());
+
+        estateImageLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/estateSmall.jpg"))); // NOI18N
 
         javax.swing.GroupLayout estatePanelLayout = new javax.swing.GroupLayout(estatePanel);
         estatePanel.setLayout(estatePanelLayout);
@@ -756,84 +808,100 @@ public class BuyStorePanel extends StorePanel {
     
     private void buyVillageButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buyVillageButtonActionPerformed
         player.useBuy(store, new Village());
-        villageLabel.setText("Villages Left: " + store.villageStack.size());
+        view.update();
+//        villageLabel.setText("Villages Left: " + store.villageStack.size());
     }//GEN-LAST:event_buyVillageButtonActionPerformed
 
     private void buySmithyButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buySmithyButtonActionPerformed
         player.useBuy(store, new Smithy());
-        smithyLabel.setText("Smithys Left: " + store.smithyStack.size());
+        view.update();
+//        smithyLabel.setText("Smithys Left: " + store.smithyStack.size());
     }//GEN-LAST:event_buySmithyButtonActionPerformed
 
 
     private void buyProvinceButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buyProvinceButtonActionPerformed
         player.useBuy(store, new Province());
-        provinceLabel.setText("Provinces Left: " + store.provinceStack.size());
+        view.update();
+//        provinceLabel.setText("Provinces Left: " + store.provinceStack.size());
     }//GEN-LAST:event_buyProvinceButtonActionPerformed
 
     
     private void buySilverButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buySilverButtonActionPerformed
         player.useBuy(store, new Silver());
+        view.update();
         //We're not keeping track of the amount of treasure cards, so there is
         //no label to update to display the amount of silver cards remaining.
     }//GEN-LAST:event_buySilverButtonActionPerformed
 
     private void buyGoldButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buyGoldButtonActionPerformed
         player.useBuy(store, new Gold());
+        view.update();
         //No label
     }//GEN-LAST:event_buyGoldButtonActionPerformed
 
     private void buyMoatButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buyMoatButtonActionPerformed
         player.useBuy(store, new Moat());
-        moatLabel.setText("Moats Left: " + store.moatStack.size());
+        view.update();
+//        moatLabel.setText("Moats Left: " + store.moatStack.size());
     }//GEN-LAST:event_buyMoatButtonActionPerformed
 
     private void buyWorkshopButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buyWorkshopButtonActionPerformed
         player.useBuy(store, new Workshop());
-        workshopLabel.setText("Workshops Left: " + store.workshopStack.size());
+        view.update();
+//        workshopLabel.setText("Workshops Left: " + store.workshopStack.size());
     }//GEN-LAST:event_buyWorkshopButtonActionPerformed
 
     private void buyCellarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buyCellarButtonActionPerformed
         player.useBuy(store, new Cellar());
-        cellarLabel.setText("Cellars Left: " + store.cellarStack.size());
+        view.update();
+//        cellarLabel.setText("Cellars Left: " + store.cellarStack.size());
     }//GEN-LAST:event_buyCellarButtonActionPerformed
 
     private void buyWoodcutterButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buyWoodcutterButtonActionPerformed
         player.useBuy(store, new Woodcutter());
-        woodcutterLabel.setText("Woodcutters Left: " + store.woodcutterStack.size());
+        view.update();
+//        woodcutterLabel.setText("Woodcutters Left: " + store.woodcutterStack.size());
     }//GEN-LAST:event_buyWoodcutterButtonActionPerformed
 
     private void buyRemodelButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buyRemodelButtonActionPerformed
         player.useBuy(store, new Remodel());
-        remodelLabel.setText("Remodels Left: " + store.remodelStack.size());
+        view.update();
+//        remodelLabel.setText("Remodels Left: " + store.remodelStack.size());
     }//GEN-LAST:event_buyRemodelButtonActionPerformed
 
     private void buyMilitiaButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buyMilitiaButtonActionPerformed
         player.useBuy(store, new Militia());
-        militiaLabel.setText("Militias Left: " + store.militiaStack.size());
+        view.update();
+//        militiaLabel.setText("Militias Left: " + store.militiaStack.size());
     }//GEN-LAST:event_buyMilitiaButtonActionPerformed
 
     private void buyMarketButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buyMarketButtonActionPerformed
         player.useBuy(store, new Market());
-        marketLabel.setText("Markets Left: " + store.marketStack.size());
+        view.update();
+//        marketLabel.setText("Markets Left: " + store.marketStack.size());
     }//GEN-LAST:event_buyMarketButtonActionPerformed
 
     private void buyMineButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buyMineButtonActionPerformed
         player.useBuy(store, new Mine());
-        mineLabel.setText("Mines Left: " + store.mineStack.size());
+        view.update();
+//        mineLabel.setText("Mines Left: " + store.mineStack.size());
     }//GEN-LAST:event_buyMineButtonActionPerformed
 
     private void buyEstateButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buyEstateButtonActionPerformed
         player.useBuy(store, new Estate());
-        estateLabel.setText("Estates Left: " + store.estateStack.size());
+        view.update();
+//        estateLabel.setText("Estates Left: " + store.estateStack.size());
     }//GEN-LAST:event_buyEstateButtonActionPerformed
 
     private void buyDuchyButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buyDuchyButtonActionPerformed
         player.useBuy(store, new Dutchy());
-        duchyLabel.setText("Duchys Left: " + store.dutchyStack.size());
+        view.update();
+//        duchyLabel.setText("Duchys Left: " + store.dutchyStack.size());
     }//GEN-LAST:event_buyDuchyButtonActionPerformed
 
     private void buyCopperButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buyCopperButtonActionPerformed
         player.useBuy(store, new Copper());
+        view.update();
         //No label
     }//GEN-LAST:event_buyCopperButtonActionPerformed
 
