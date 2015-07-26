@@ -9,7 +9,8 @@ public class ActionMilitia extends Action {
                 if (player.playerTurn == Player.Turn.WAITING){
                     player.playerTurn = Player.Turn.DISCARDING;
                     player.setDiscardInEffect(true);
-                    player.setAmountToDiscard(player.getHand().size()-(player.getHand().size()-3));
+                    System.out.println(player.getHand().size() - (player.getHand().size()-2));
+                    player.setAmountToDiscard(player.getHand().size() - (player.getHand().size()-2));
                 }
             }
             

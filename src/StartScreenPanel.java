@@ -182,10 +182,10 @@ public class StartScreenPanel extends JFrame {
         int numberOfPlayers = (int) NumberOfPlayers.getSelectedIndex();
         playerNames.add(Player1Name.getText());
         playerNames.add(Player2Name.getText());
-        if (numberOfPlayers > 2){
+        if (numberOfPlayers > 0){
             playerNames.add(Player3Name.getText());
         }
-        if (numberOfPlayers > 3){
+        if (numberOfPlayers > 1){
             playerNames.add(Player4Name.getText());
         }
         View view = new View(playerNames);
