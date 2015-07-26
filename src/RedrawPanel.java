@@ -109,6 +109,7 @@ public class RedrawPanel extends PlayerPanel {
         public void actionPerformed(ActionEvent e) {
                 view.getGameManager().getActivePlayer().drawCards(view.getGameManager().getActivePlayer().getSpecialDrawAmount());
                 view.getGameManager().getActivePlayer().playerTurn = Player.Turn.ACTION;
+                view.getGameManager().getActivePlayer().setSpecialDrawAmount(0);
                 view.update();
         }
     }

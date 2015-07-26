@@ -55,39 +55,36 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace pref="196" max="32767" attributes="0"/>
-                  <Group type="103" groupAlignment="1" attributes="0">
-                      <Component id="PlayerNamesLabel" min="-2" max="-2" attributes="0"/>
-                      <Component id="NumberPlayersLabel" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                      <Group type="102" attributes="0">
-                          <Component id="NumberPlayersTextField" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="NumberPlayerButton" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" attributes="0">
-                          <Component id="PlayerNamesTextField" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="PlayerNameButton" max="32767" attributes="0"/>
-                      </Group>
-                  </Group>
-                  <EmptySpace min="-2" pref="179" max="-2" attributes="0"/>
-              </Group>
               <Group type="102" attributes="0">
+                  <EmptySpace min="-2" pref="199" max="-2" attributes="0"/>
+                  <Component id="DominionLabel" min="-2" pref="243" max="-2" attributes="0"/>
+                  <EmptySpace pref="185" max="32767" attributes="0"/>
+              </Group>
+              <Group type="102" alignment="1" attributes="0">
+                  <EmptySpace max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="199" max="-2" attributes="0"/>
-                          <Component id="DominionLabel" min="-2" pref="243" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="274" max="-2" attributes="0"/>
-                          <Component id="StartGameButton" min="-2" max="-2" attributes="0"/>
+                      <Component id="StartGameButton" min="-2" max="-2" attributes="0"/>
+                      <Group type="102" attributes="0">
+                          <Group type="103" groupAlignment="1" attributes="0">
+                              <Component id="NumberPlayersLabel" min="-2" max="-2" attributes="0"/>
+                              <Group type="103" alignment="1" groupAlignment="0" attributes="0">
+                                  <Component id="Player2Label" min="-2" max="-2" attributes="0"/>
+                                  <Component id="Player1Label" min="-2" max="-2" attributes="0"/>
+                                  <Component id="Player3Label" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="Player4Label" alignment="0" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="Player3Name" min="-2" max="-2" attributes="0"/>
+                              <Component id="Player2Name" min="-2" max="-2" attributes="0"/>
+                              <Component id="Player1Name" min="-2" max="-2" attributes="0"/>
+                              <Component id="NumberOfPlayers" min="-2" max="-2" attributes="0"/>
+                              <Component id="Player4Name" alignment="0" min="-2" max="-2" attributes="0"/>
+                          </Group>
                       </Group>
                   </Group>
-                  <EmptySpace max="32767" attributes="0"/>
+                  <EmptySpace min="-2" pref="172" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -96,21 +93,34 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="71" max="-2" attributes="0"/>
                   <Component id="DominionLabel" min="-2" pref="87" max="-2" attributes="0"/>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="NumberPlayersTextField" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="NumberPlayersLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="NumberPlayerButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="NumberOfPlayers" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="PlayerNamesLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="PlayerNameButton" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="PlayerNamesTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="Player1Label" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="Player1Name" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="Player2Name" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="Player2Label" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="Player3Name" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="Player3Label" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="Player4Name" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="Player4Label" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace pref="30" max="32767" attributes="0"/>
                   <Component id="StartGameButton" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="119" max="32767" attributes="0"/>
+                  <EmptySpace min="-2" pref="66" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -128,16 +138,6 @@
             <Property name="alignmentY" type="float" value="0.0"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="NumberPlayersTextField">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Enter Number"/>
-          </Properties>
-          <AccessibilityProperties>
-            <Property name="AccessibleContext.accessibleParent" type="javax.accessibility.Accessible" editor="org.netbeans.modules.form.ComponentChooserEditor">
-              <ComponentRef name="NumberPlayersTextField"/>
-            </Property>
-          </AccessibilityProperties>
-        </Component>
         <Component class="javax.swing.JLabel" name="NumberPlayersLabel">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -146,44 +146,26 @@
             <Property name="text" type="java.lang.String" value="Number of Players"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="NumberPlayerButton">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Enter"/>
-          </Properties>
-          <AccessibilityProperties>
-            <Property name="AccessibleContext.accessibleParent" type="javax.accessibility.Accessible" editor="org.netbeans.modules.form.ComponentChooserEditor">
-              <ComponentRef name="NumberPlayersTextField"/>
-            </Property>
-          </AccessibilityProperties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="NumberPlayerButtonActionPerformed"/>
-          </Events>
-        </Component>
-        <Component class="javax.swing.JLabel" name="PlayerNamesLabel">
+        <Component class="javax.swing.JLabel" name="Player1Label">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Arial" size="12" style="1"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Players Names"/>
+            <Property name="text" type="java.lang.String" value="Player 1 Name:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="PlayerNameButton">
+        <Component class="javax.swing.JTextField" name="Player1Name">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Next"/>
-          </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="PlayerNameButtonActionPerformed"/>
-          </Events>
-        </Component>
-        <Component class="javax.swing.JTextField" name="PlayerNamesTextField">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Enter Number"/>
+            <Property name="text" type="java.lang.String" value="Player 1"/>
           </Properties>
           <AccessibilityProperties>
             <Property name="AccessibleContext.accessibleParent" type="javax.accessibility.Accessible" editor="org.netbeans.modules.form.ComponentChooserEditor">
-              <ComponentRef name="PlayerNamesTextField"/>
+              <ComponentRef name="Player1Name"/>
             </Property>
           </AccessibilityProperties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Player1NameActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="StartGameButton">
           <Properties>
@@ -192,6 +174,51 @@
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="StartGameButtonActionPerformed"/>
           </Events>
+        </Component>
+        <Component class="javax.swing.JComboBox" name="NumberOfPlayers">
+          <Properties>
+            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+              <StringArray count="3">
+                <StringItem index="0" value="2"/>
+                <StringItem index="1" value="3"/>
+                <StringItem index="2" value="4"/>
+              </StringArray>
+            </Property>
+            <Property name="selectedIndex" type="int" value="2"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="NumberOfPlayersActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JTextField" name="Player2Name">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Player 2"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="Player3Name">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Player 3"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="Player4Name">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Player 4"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="Player2Label">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Player 2 Name:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="Player3Label">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Player 3 Name:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="Player4Label">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Player 4 Name:"/>
+          </Properties>
         </Component>
       </SubComponents>
     </Container>

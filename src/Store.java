@@ -146,7 +146,7 @@ public class Store {
         switch (name) {
             case "cellar":
                 inStock = !cellarStack.isEmpty();
-                System.out.println("Cellar Stack Contains: " + cellarStack);
+                //System.out.println("Cellar Stack Contains: " + cellarStack);
                 break;
             case "market":
                 inStock = !marketStack.isEmpty();

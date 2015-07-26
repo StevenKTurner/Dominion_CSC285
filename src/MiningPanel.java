@@ -57,8 +57,8 @@ public class MiningPanel extends PlayerPanel {
             JButton temp = new JButton(card.getImage());
             if (card.getType() == "Money"){
                 temp.addActionListener(new CardButtonListener(view, card));
-                cardButtons.add(temp);
             }
+            cardButtons.add(temp);
             handPanel.add(cardButtons.get(cardButtons.size()-1));
 //            System.out.println(card);
         }

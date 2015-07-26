@@ -24,8 +24,8 @@ public class View {
     JScrollPane scroll;
     JFrame frame;
     
-    public View(){
-        
+    public View(ArrayList<String> players){
+        GameStart(players);
         //Need to start up the Start Game Screen here to get the player names and amout of players and pass that in
         //to a newly created GameManager as an ArrayList<String>
         
@@ -69,6 +69,18 @@ public class View {
         spanel.removeAll();
         if (gm.isEndGame()){
             //do the endgame screen
+            gm.endGame();
+            ArrayList<String> playerNames = new ArrayList();
+            ArrayList<Integer> scores = new ArrayList();
+            for (Player player : gm.getPlayers()){
+                playerNames.add(player.getName());
+            }
+            for (int score : gm.scores){
+                scores.add(score);
+            }
+            GameEnd end = new GameEnd(playerNames, scores);
+            this.frame.setVisible(false);
+            this.frame.dispose();
         } else if (gm.getActivePlayer().isDiscardInEffect()){
             ppanel = new DiscardPanel(this);
             spanel = new InactiveStorePanel(this);
@@ -117,15 +129,15 @@ public class View {
         //spanel.update();
     }
     
-    public static void main(String[] args) {
-        View testview = new View();
-        ArrayList<String> temp = new ArrayList();
-        temp.add("Steven");
-        temp.add("Neal");
-        temp.add("Kelly");
-        temp.add("Zach");
-        testview.GameStart(temp);
-    }
+//    public static void main(String[] args) {
+//        View testview = new View();
+//        ArrayList<String> temp = new ArrayList();
+//        temp.add("Steven");
+//        temp.add("Neal");
+//        temp.add("Kelly");
+//        temp.add("Zach");
+//        testview.GameStart(temp);
+//    }
     
     
     

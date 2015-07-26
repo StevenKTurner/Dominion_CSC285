@@ -9,6 +9,7 @@
  * @author User
  */
 
+import com.sun.glass.events.WindowEvent;
 import static java.lang.Integer.parseInt; 
 import java.util.ArrayList;
 import javax.swing.JFrame;
@@ -35,13 +36,17 @@ public class StartScreenPanel extends JFrame {
         choice1 = new java.awt.Choice();
         jPanel2 = new javax.swing.JPanel();
         DominionLabel = new javax.swing.JLabel();
-        NumberPlayersTextField = new javax.swing.JTextField();
         NumberPlayersLabel = new javax.swing.JLabel();
-        NumberPlayerButton = new javax.swing.JButton();
-        PlayerNamesLabel = new javax.swing.JLabel();
-        PlayerNameButton = new javax.swing.JButton();
-        PlayerNamesTextField = new javax.swing.JTextField();
+        Player1Label = new javax.swing.JLabel();
+        Player1Name = new javax.swing.JTextField();
         StartGameButton = new javax.swing.JButton();
+        NumberOfPlayers = new javax.swing.JComboBox();
+        Player2Name = new javax.swing.JTextField();
+        Player3Name = new javax.swing.JTextField();
+        Player4Name = new javax.swing.JTextField();
+        Player2Label = new javax.swing.JLabel();
+        Player3Label = new javax.swing.JLabel();
+        Player4Label = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -52,29 +57,18 @@ public class StartScreenPanel extends JFrame {
         DominionLabel.setText(" Dominion");
         DominionLabel.setAlignmentY(0.0F);
 
-        NumberPlayersTextField.setText("Enter Number");
-
         NumberPlayersLabel.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         NumberPlayersLabel.setText("Number of Players");
 
-        NumberPlayerButton.setText("Enter");
-        NumberPlayerButton.addActionListener(new java.awt.event.ActionListener() {
+        Player1Label.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        Player1Label.setText("Player 1 Name:");
+
+        Player1Name.setText("Player 1");
+        Player1Name.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                NumberPlayerButtonActionPerformed(evt);
+                Player1NameActionPerformed(evt);
             }
         });
-
-        PlayerNamesLabel.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        PlayerNamesLabel.setText("Players Names");
-
-        PlayerNameButton.setText("Next");
-        PlayerNameButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                PlayerNameButtonActionPerformed(evt);
-            }
-        });
-
-        PlayerNamesTextField.setText("Enter Number");
 
         StartGameButton.setText("Start Game");
         StartGameButton.addActionListener(new java.awt.event.ActionListener() {
@@ -83,59 +77,86 @@ public class StartScreenPanel extends JFrame {
             }
         });
 
+        NumberOfPlayers.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "2", "3", "4" }));
+        NumberOfPlayers.setSelectedIndex(2);
+        NumberOfPlayers.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                NumberOfPlayersActionPerformed(evt);
+            }
+        });
+
+        Player2Name.setText("Player 2");
+
+        Player3Name.setText("Player 3");
+
+        Player4Name.setText("Player 4");
+
+        Player2Label.setText("Player 2 Name:");
+
+        Player3Label.setText("Player 3 Name:");
+
+        Player4Label.setText("Player 4 Name:");
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(196, Short.MAX_VALUE)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(PlayerNamesLabel)
-                    .addComponent(NumberPlayersLabel))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(NumberPlayersTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(NumberPlayerButton))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(PlayerNamesTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(PlayerNameButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addGap(179, 179, 179))
             .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(199, 199, 199)
+                .addComponent(DominionLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(185, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(StartGameButton)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(199, 199, 199)
-                        .addComponent(DominionLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(274, 274, 274)
-                        .addComponent(StartGameButton)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(NumberPlayersLabel)
+                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(Player2Label)
+                                .addComponent(Player1Label)
+                                .addComponent(Player3Label)
+                                .addComponent(Player4Label)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(Player3Name, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Player2Name, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Player1Name, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(NumberOfPlayers, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Player4Name, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(172, 172, 172))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(71, 71, 71)
                 .addComponent(DominionLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(29, 29, 29)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(NumberPlayersTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(NumberPlayersLabel)
-                    .addComponent(NumberPlayerButton))
-                .addGap(18, 18, 18)
+                    .addComponent(NumberOfPlayers, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(PlayerNamesLabel)
-                    .addComponent(PlayerNameButton)
-                    .addComponent(PlayerNamesTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(48, 48, 48)
+                    .addComponent(Player1Label)
+                    .addComponent(Player1Name, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Player2Name, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Player2Label))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Player3Name, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Player3Label))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Player4Name, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Player4Label))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
                 .addComponent(StartGameButton)
-                .addContainerGap(119, Short.MAX_VALUE))
+                .addGap(66, 66, 66))
         );
 
-        NumberPlayersTextField.getAccessibleContext().setAccessibleParent(NumberPlayersTextField);
-        NumberPlayerButton.getAccessibleContext().setAccessibleParent(NumberPlayersTextField);
-        PlayerNamesTextField.getAccessibleContext().setAccessibleParent(PlayerNamesTextField);
+        Player1Name.getAccessibleContext().setAccessibleParent(Player1Name);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -157,21 +178,44 @@ public class StartScreenPanel extends JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void NumberPlayerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NumberPlayerButtonActionPerformed
-        String string = NumberPlayersTextField.toString();
-        numberOfPlayers = parseInt(string);
-        
-    }//GEN-LAST:event_NumberPlayerButtonActionPerformed
-
-    private void PlayerNameButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PlayerNameButtonActionPerformed
-        String string = PlayerNamesTextField.toString();
-        playerNames.add(string);
-    }//GEN-LAST:event_PlayerNameButtonActionPerformed
-
     private void StartGameButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_StartGameButtonActionPerformed
-        View view = new View();
-        view.GameStart(playerNames);
+        int numberOfPlayers = (int) NumberOfPlayers.getSelectedIndex();
+        playerNames.add(Player1Name.getText());
+        playerNames.add(Player2Name.getText());
+        if (numberOfPlayers > 2){
+            playerNames.add(Player3Name.getText());
+        }
+        if (numberOfPlayers > 3){
+            playerNames.add(Player4Name.getText());
+        }
+        View view = new View(playerNames);
+        this.setVisible(false);
+        dispose();
     }//GEN-LAST:event_StartGameButtonActionPerformed
+
+    private void Player1NameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Player1NameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Player1NameActionPerformed
+
+    private void NumberOfPlayersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NumberOfPlayersActionPerformed
+        // TODO add your handling code here:
+        if (NumberOfPlayers.getSelectedIndex() == 0){ // 2 players
+            Player3Label.setVisible(false);
+            Player3Name.setVisible(false);
+            Player4Label.setVisible(false);
+            Player4Name.setVisible(false);
+        } else if (NumberOfPlayers.getSelectedIndex() == 1){ // 3 players
+            Player3Label.setVisible(true);
+            Player3Name.setVisible(true);
+            Player4Label.setVisible(false);
+            Player4Name.setVisible(false);
+        } else if (NumberOfPlayers.getSelectedIndex() == 2){ // 4 players
+            Player3Label.setVisible(true);
+            Player3Name.setVisible(true);
+            Player4Label.setVisible(true);
+            Player4Name.setVisible(true);
+        }
+    }//GEN-LAST:event_NumberOfPlayersActionPerformed
 
     /**
      * @param args the command line arguments
@@ -210,12 +254,16 @@ public class StartScreenPanel extends JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel DominionLabel;
-    private javax.swing.JButton NumberPlayerButton;
+    private javax.swing.JComboBox NumberOfPlayers;
     private javax.swing.JLabel NumberPlayersLabel;
-    private javax.swing.JTextField NumberPlayersTextField;
-    private javax.swing.JButton PlayerNameButton;
-    private javax.swing.JLabel PlayerNamesLabel;
-    private javax.swing.JTextField PlayerNamesTextField;
+    private javax.swing.JLabel Player1Label;
+    private javax.swing.JTextField Player1Name;
+    private javax.swing.JLabel Player2Label;
+    private javax.swing.JTextField Player2Name;
+    private javax.swing.JLabel Player3Label;
+    private javax.swing.JTextField Player3Name;
+    private javax.swing.JLabel Player4Label;
+    private javax.swing.JTextField Player4Name;
     private javax.swing.JButton StartGameButton;
     private java.awt.Choice choice1;
     private javax.swing.JPanel jPanel2;

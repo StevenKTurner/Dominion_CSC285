@@ -949,9 +949,12 @@
         <Component class="javax.swing.JLabel" name="duchyLabel">
           <Properties>
             <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-              <Connection code="&quot;Duchys Left: &quot; + store.dutchyStack.size(" type="code"/>
+              <Connection code="&quot;Duchys Left: &quot; + store.dutchyStack.size()" type="code"/>
             </Property>
           </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_SerializeTo" type="java.lang.String" value="InactiveStorePanel_duchyLabel"/>
+          </AuxValues>
         </Component>
         <Component class="javax.swing.JLabel" name="duchyImageLabel">
           <Properties>
