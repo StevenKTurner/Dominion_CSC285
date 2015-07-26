@@ -90,7 +90,7 @@ public class DiscardPanel extends PlayerPanel {
         
         //this.removeAll();
 
-        discardLabel = new JLabel("Please discard " + discardAmount + " more cards");
+        discardLabel = new JLabel(gm.getActivePlayer().getName() + ", Please discard " + discardAmount + " more cards");
         
         statsPanel.add(discardLabel);
         

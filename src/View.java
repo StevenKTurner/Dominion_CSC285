@@ -81,18 +81,21 @@ public class View {
         } else if (gm.getActivePlayer().playerTurn == Player.Turn.DISCARDING){
             ppanel = new DiscardPanel(this);
             spanel = new InactiveStorePanel(this);
-        } else if (gm.getActivePlayer().playerTurn == Player.Turn.FREEBIE){
-            ppanel = new FreebiePanel(this);
+        } else if (gm.getActivePlayer().playerTurn == Player.Turn.FREEBIE){ //can use Freebie to get result of a card
+            ppanel = new InactivePanel(this); 
             spanel = new FreebieStorePanel(this);
-        } else if (gm.getActivePlayer().playerTurn == Player.Turn.TRASHING){
-            ppanel = new TrashPanel(this);
-            spanel = new InactiveStorePanel(this);
+//        } else if (gm.getActivePlayer().playerTurn == Player.Turn.TRASHING){
+//            ppanel = new TrashPanel(this);
+//            spanel = new InactiveStorePanel(this);
         } else if (gm.getActivePlayer().playerTurn == Player.Turn.MINING){
-            
+            ppanel = new MiningPanel(this);
+            spanel = new InactiveStorePanel(this);
         } else if (gm.getActivePlayer().playerTurn == Player.Turn.REDRAWING){
-            
+            ppanel = new RedrawPanel(this);
+            spanel = new InactiveStorePanel(this);
         } else if (gm.getActivePlayer().playerTurn == Player.Turn.REMODELING){
-            
+            ppanel = new RemodelPanel(this); //Remodel sets player Turn to Freebie after it's done
+            spanel = new InactiveStorePanel(this);
         } else if (gm.getActivePlayer().playerTurn == Player.Turn.WAITING){
             System.out.println("Active player is waiting, this should never happen, something's wrong.");
         }
@@ -110,7 +113,7 @@ public class View {
         scroll.revalidate();
         frame.repaint();
         frame.revalidate();
-        System.out.println(gm.getActivePlayer().playerTurn);
+        //System.out.println(gm.getActivePlayer().playerTurn);
         //spanel.update();
     }
     

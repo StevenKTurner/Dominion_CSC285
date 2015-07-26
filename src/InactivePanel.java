@@ -7,6 +7,7 @@ import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 
@@ -136,6 +137,7 @@ public class InactivePanel extends PlayerPanel{
                 view.getGameManager().endGame();
             }
              view.getGameManager().startNextPlayerTurn();
+             JOptionPane.showMessageDialog(null, view.getGameManager().getActivePlayer().getName() + ", Please sit down and hit OK");
              view.update();
         }
     }

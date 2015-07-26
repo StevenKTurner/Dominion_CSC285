@@ -12,18 +12,48 @@ public class FreebieStorePanel extends StorePanel {
 
     //freebieValue needs to be accessed from the ActionRemodel 
     Store store;
-    Player player = new Player("Current Player");
+    Player player;
     Card card;
+    GameManager gm;
+    View view;
     /**
      * Creates new form StorePanelPanel
      */
     public FreebieStorePanel(View view) {
-        GameManager gm = view.getGameManager();
+        this.view = view;
+        gm = view.getGameManager();
         player = gm.getActivePlayer();
         store = gm.getStore();
         initComponents();
+        updateLabels();
     }
-
+    
+    private void removeCard(Card card){
+        if ((gm.getActivePlayer().getFreebieValue() >= card.getCost()) && gm.getStore().cardInStock(card))
+        {
+            player.getDiscardPile().add(card);
+            store.removeCard(card);
+            gm.getActivePlayer().playerTurn = Player.Turn.ACTION;
+            view.update();
+        }
+    }
+    
+    private void updateLabels(){
+        villageLabel.setText("Villages Left: " + store.villageStack.size());
+        smithyLabel.setText("Smithys Left: " + store.smithyStack.size());
+        provinceLabel.setText("Provinces Left: " + store.provinceStack.size());
+        workshopLabel.setText("Workshops Left: " + store.workshopStack.size());
+        cellarLabel.setText("Cellars Left: " + store.cellarStack.size());
+        woodcutterLabel.setText("Woodcutters Left: " + store.woodcutterStack.size());
+        remodelLabel.setText("Remodels Left: " + store.remodelStack.size());
+        militiaLabel.setText("Militias Left: " + store.militiaStack.size());
+        marketLabel.setText("Markets Left: " + store.marketStack.size());
+        mineLabel.setText("Mines Left: " + store.mineStack.size());
+        estateLabel.setText("Estates Left: " + store.estateStack.size());
+        duchyLabel.setText("Duchys Left: " + store.dutchyStack.size());
+        moatLabel.setText("Moats Left: " + store.moatStack.size());
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -778,163 +808,181 @@ public class FreebieStorePanel extends StorePanel {
     // *************
     
     private void gainVillageButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gainVillageButtonActionPerformed
-        card = new Village();
-        if (freebieValue <= card.getCost())
-        {
-            player.discard(card);
-            store.villageStack.remove(store.villageStack.size()-1);
-            villageLabel.setText("Villages Left: " + store.villageStack.size());
-        }
-        
+//        card = new Village();
+//        if ((gm.getActivePlayer().getFreebieValue() <= card.getCost()) && gm.getStore().cardInStock(card))
+//        {
+//            player.discard(card);
+            //store.villageStack.remove(store.villageStack.size()-1);
+            //villageLabel.setText("Villages Left: " + store.villageStack.size());
+//        }
+        removeCard(new Village());
     }//GEN-LAST:event_gainVillageButtonActionPerformed
 
     private void gainSmithyButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gainSmithyButtonActionPerformed
-        card = new Smithy();
-        if (freebieValue <= card.getCost())
-        {
-            player.discard(card);
-            store.smithyStack.remove(store.smithyStack.size()-1);
-            smithyLabel.setText("Smithys Left: " + store.smithyStack.size());
-        }
+//        card = new Smithy();
+//        if (gm.getActivePlayer().getFreebieValue() <= card.getCost())
+//        {
+//            player.discard(card);
+//            store.smithyStack.remove(store.smithyStack.size()-1);
+//            smithyLabel.setText("Smithys Left: " + store.smithyStack.size());
+//        }
+        removeCard(new Smithy());
     }//GEN-LAST:event_gainSmithyButtonActionPerformed
 
 
     private void gainProvinceButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gainProvinceButtonActionPerformed
-       card = new Province();
-        if (freebieValue <= card.getCost())
-        {
-            player.discard(card);
-            store.provinceStack.remove(store.provinceStack.size()-1);
-            provinceLabel.setText("Provinces Left: " + store.provinceStack.size());
-        }
+//       card = new Province();
+//        if (gm.getActivePlayer().getFreebieValue() <= card.getCost())
+//        {
+//            player.discard(card);
+//            store.provinceStack.remove(store.provinceStack.size()-1);
+//            provinceLabel.setText("Provinces Left: " + store.provinceStack.size());
+//        }
+        removeCard(new Province());
     }//GEN-LAST:event_gainProvinceButtonActionPerformed
 
     
     private void gainSilverButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gainSilverButtonActionPerformed
-        card = new Silver();
-        if (freebieValue <= card.getCost())
-        {
-            player.discard(card);
-        }
+//        card = new Silver();
+//        if (gm.getActivePlayer().getFreebieValue() <= card.getCost())
+//        {
+//            player.getDiscardPile().add(card);
+//            
+//        }
         //We're not keeping track of the amount of treasure cards, so there is
         //no label to update to display the amount of silver cards remaining.
+        removeCard(new Silver());
     }//GEN-LAST:event_gainSilverButtonActionPerformed
 
     private void gainGoldButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gainGoldButtonActionPerformed
-        card = new Gold();
-        if (freebieValue <= card.getCost())
-        {
-            player.discard(card);
-        }
+//        card = new Gold();
+//        if (freebieValue <= card.getCost())
+//        {
+//            player.discard(card);
+//        }
         //No label
+        removeCard(new Gold());
     }//GEN-LAST:event_gainGoldButtonActionPerformed
 
     private void gainWorkshopButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gainWorkshopButtonActionPerformed
-       card = new Workshop();
-        if (freebieValue <= card.getCost())
-        {
-            player.discard(card);
-            store.workshopStack.remove(store.workshopStack.size()-1);
-            workshopLabel.setText("Workshops Left: " + store.workshopStack.size());
-        }
+//       card = new Workshop();
+//        if (freebieValue <= card.getCost())
+//        {
+//            player.discard(card);
+//            store.workshopStack.remove(store.workshopStack.size()-1);
+//            workshopLabel.setText("Workshops Left: " + store.workshopStack.size());
+//        }
+        removeCard(new Workshop());
     }//GEN-LAST:event_gainWorkshopButtonActionPerformed
 
     private void gainCellarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gainCellarButtonActionPerformed
-        card = new Cellar();
-        if (freebieValue <= card.getCost())
-        {
-            player.discard(card);
-            store.cellarStack.remove(store.cellarStack.size()-1);
-            cellarLabel.setText("Cellars Left: " + store.cellarStack.size());
-        }
+//        card = new Cellar();
+//        if (freebieValue <= card.getCost())
+//        {
+//            player.discard(card);
+//            store.cellarStack.remove(store.cellarStack.size()-1);
+//            cellarLabel.setText("Cellars Left: " + store.cellarStack.size());
+//        }
+        removeCard(new Cellar());
     }//GEN-LAST:event_gainCellarButtonActionPerformed
 
     private void gainWoodcutterButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gainWoodcutterButtonActionPerformed
-        card = new Woodcutter();
-        if (freebieValue <= card.getCost())
-        {
-            player.discard(card);
-            store.woodcutterStack.remove(store.woodcutterStack.size()-1);
-            woodcutterLabel.setText("Woodcutters Left: " + store.woodcutterStack.size());
-        }
+//        card = new Woodcutter();
+//        if (freebieValue <= card.getCost())
+//        {
+//            player.discard(card);
+//            store.woodcutterStack.remove(store.woodcutterStack.size()-1);
+//            woodcutterLabel.setText("Woodcutters Left: " + store.woodcutterStack.size());
+//        }
+        removeCard(new Woodcutter());
     }//GEN-LAST:event_gainWoodcutterButtonActionPerformed
 
     private void gainRemodelButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gainRemodelButtonActionPerformed
-       card = new Remodel();
-        if (freebieValue <= card.getCost())
-        {
-            player.discard(card);
-            store.remodelStack.remove(store.remodelStack.size()-1);
-            remodelLabel.setText("Remodels Left: " + store.remodelStack.size());
-        }
+//       card = new Remodel();
+//        if (freebieValue <= card.getCost())
+//        {
+//            player.discard(card);
+//            store.remodelStack.remove(store.remodelStack.size()-1);
+//            remodelLabel.setText("Remodels Left: " + store.remodelStack.size());
+//        }
+        removeCard(new Remodel());
     }//GEN-LAST:event_gainRemodelButtonActionPerformed
 
     private void gainMilitiaButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gainMilitiaButtonActionPerformed
-        card = new Militia();
-        if (freebieValue <= card.getCost())
-        {
-            player.discard(card);
-            store.militiaStack.remove(store.militiaStack.size()-1);
-            militiaLabel.setText("Militias Left: " + store.militiaStack.size());
-        }
+//        card = new Militia();
+//        if (freebieValue <= card.getCost())
+//        {
+//            player.discard(card);
+//            store.militiaStack.remove(store.militiaStack.size()-1);
+//            militiaLabel.setText("Militias Left: " + store.militiaStack.size());
+//        }
+        removeCard(new Militia());
     }//GEN-LAST:event_gainMilitiaButtonActionPerformed
 
     private void gainMarketButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gainMarketButtonActionPerformed
-        card = new Market();
-        if (freebieValue <= card.getCost())
-        {
-            player.discard(card);
-            store.marketStack.remove(store.marketStack.size()-1);
-            marketLabel.setText("Markets Left: " + store.marketStack.size());
-        }
+//        card = new Market();
+//        if (freebieValue <= card.getCost())
+//        {
+//            player.discard(card);
+//            store.marketStack.remove(store.marketStack.size()-1);
+//            marketLabel.setText("Markets Left: " + store.marketStack.size());
+//        }
+        removeCard(new Market());
     }//GEN-LAST:event_gainMarketButtonActionPerformed
 
     private void gainMineButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gainMineButtonActionPerformed
-        card = new Mine();
-        if (freebieValue <= card.getCost())
-        {
-            player.discard(card);
-            store.mineStack.remove(store.mineStack.size()-1);
-            mineLabel.setText("Mines Left: " + store.mineStack.size());
-        }
+//        card = new Mine();
+//        if (freebieValue <= card.getCost())
+//        {
+//            player.discard(card);
+//            store.mineStack.remove(store.mineStack.size()-1);
+//            mineLabel.setText("Mines Left: " + store.mineStack.size());
+//        }
+        removeCard(new Mine());
     }//GEN-LAST:event_gainMineButtonActionPerformed
 
     private void gainEstateButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gainEstateButtonActionPerformed
-        card = new Estate();
-        if (freebieValue <= card.getCost())
-        {
-            player.discard(card);
-            store.estateStack.remove(store.estateStack.size()-1);
-            estateLabel.setText("Estates Left: " + store.estateStack.size());
-        }
+//        card = new Estate();
+//        if (freebieValue <= card.getCost())
+//        {
+//            player.discard(card);
+//            store.estateStack.remove(store.estateStack.size()-1);
+//            estateLabel.setText("Estates Left: " + store.estateStack.size());
+//        }
+        removeCard(new Estate());
     }//GEN-LAST:event_gainEstateButtonActionPerformed
 
     private void gainDuchyButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gainDuchyButtonActionPerformed
-        card = new Dutchy();
-        if (freebieValue <= card.getCost())
-        {
-            player.discard(card);
-            store.dutchyStack.remove(store.dutchyStack.size()-1);
-            duchyLabel.setText("Duchys Left: " + store.dutchyStack.size());
-        }
+//        card = new Dutchy();
+//        if (freebieValue <= card.getCost())
+//        {
+//            player.discard(card);
+//            store.dutchyStack.remove(store.dutchyStack.size()-1);
+//            duchyLabel.setText("Duchys Left: " + store.dutchyStack.size());
+//        }
+        removeCard(new Dutchy());
     }//GEN-LAST:event_gainDuchyButtonActionPerformed
 
     private void gainCopperButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gainCopperButtonActionPerformed
-        card = new Copper();
-        if (freebieValue <= card.getCost())
-        {
-            player.discard(card);
-        }
+//        card = new Copper();
+//        if (freebieValue <= card.getCost())
+//        {
+//            player.discard(card);
+//        }
         //No label
+        removeCard(new Copper());
     }//GEN-LAST:event_gainCopperButtonActionPerformed
 
     private void gainMoatButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gainMoatButtonActionPerformed
-        card = new Moat();
-        if (freebieValue <= card.getCost())
+//        card = new Moat();
+//        if (freebieValue <= card.getCost())
+//        {
+//            player.discard(card);
+//            store.moatStack.remove(store.moatStack.size()-1);
+//            moatLabel.setText("Moats Left: " + store.moatStack.size());
+//           
+        removeCard(new Moat());
         {
-            player.discard(card);
-            store.moatStack.remove(store.moatStack.size()-1);
-            moatLabel.setText("Moats Left: " + store.moatStack.size());
         }    }//GEN-LAST:event_gainMoatButtonActionPerformed
 
 

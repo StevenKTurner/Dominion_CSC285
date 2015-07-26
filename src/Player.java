@@ -23,6 +23,7 @@ public class Player {
     public Turn playerTurn = Turn.WAITING;
     private boolean discardInEffect = false;
     private int amountToDiscard;
+    private int lastTrashedCardValue;
     
     public Player(String name){
         
@@ -144,6 +145,7 @@ public class Player {
     }
     
     public void trashCard(Card card, ArrayList<Card> source){
+        lastTrashedCardValue = card.getCost();
         source.remove(card);
     }
     
@@ -267,6 +269,14 @@ public class Player {
     
     public void reduceAmountToDiscard(int i){
         amountToDiscard -= i;
+    }
+    
+//    public void setLastTrashedCardValue(int i){
+//        lastTrashedCardValue = i;
+//    }
+    
+    public int getLastTrashedCardValue(){
+        return lastTrashedCardValue;
     }
     
 //    public static void main(String[] args) {

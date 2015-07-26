@@ -111,6 +111,12 @@ public class Store {
             case "province":
                 provinceStack.remove(provinceStack.size()-1);
                 break;
+            case "copper":
+                break;
+            case "silver":
+                break;
+            case "gold":
+                break;
             default:
                 System.out.println("This default statement should never be reached");
         }
@@ -177,6 +183,15 @@ public class Store {
                 break;
             case "province":
                 inStock = !provinceStack.isEmpty();
+                break;
+            case "copper":
+                inStock = true;
+                break;
+            case "silver":
+                inStock = true;
+                break;
+            case "gold":
+                inStock = true;
                 break;
             default:
                 System.out.println("This default statement should never be reached");
