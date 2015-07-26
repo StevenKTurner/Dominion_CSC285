@@ -103,9 +103,7 @@ public class BuyStorePanel extends StorePanel {
             }
         });
 
-        smithyLabel.setText("Smithys Left: 10");
-
-        smithyImageLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/smithy.jpg"))); // NOI18N
+        smithyLabel.setText("Smithys Left: " + store.smithyStack.size());
 
         javax.swing.GroupLayout smithyPanelLayout = new javax.swing.GroupLayout(smithyPanel);
         smithyPanel.setLayout(smithyPanelLayout);
@@ -144,9 +142,7 @@ public class BuyStorePanel extends StorePanel {
             }
         });
 
-        militiaLabel.setText("Militias Left: 10");
-
-        militiaImageLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/militia.jpg"))); // NOI18N
+        militiaLabel.setText("Militias Left: " + store.militiaStack.size());
 
         javax.swing.GroupLayout MilitiaPanelLayout = new javax.swing.GroupLayout(MilitiaPanel);
         MilitiaPanel.setLayout(MilitiaPanelLayout);
@@ -160,7 +156,7 @@ public class BuyStorePanel extends StorePanel {
                 .addGap(52, 52, 52))
             .addGroup(MilitiaPanelLayout.createSequentialGroup()
                 .addComponent(militiaImageLabel)
-                .addGap(0, 20, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         MilitiaPanelLayout.setVerticalGroup(
             MilitiaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -181,9 +177,7 @@ public class BuyStorePanel extends StorePanel {
             }
         });
 
-        remodelLabel.setText("Remodels Left: 10");
-
-        remodelImageIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/remodel.jpg"))); // NOI18N
+        remodelLabel.setText("Remodels Left: " + store.remodelStack.size());
 
         javax.swing.GroupLayout remodelPanelLayout = new javax.swing.GroupLayout(remodelPanel);
         remodelPanel.setLayout(remodelPanelLayout);
@@ -219,9 +213,7 @@ public class BuyStorePanel extends StorePanel {
             }
         });
 
-        marketLabel.setText("Markets Left: 10");
-
-        marketsImageLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/market.jpg"))); // NOI18N
+        marketLabel.setText("Markets Left: " + store.marketStack.size());
 
         javax.swing.GroupLayout marketPanelLayout = new javax.swing.GroupLayout(marketPanel);
         marketPanel.setLayout(marketPanelLayout);
@@ -258,9 +250,7 @@ public class BuyStorePanel extends StorePanel {
             }
         });
 
-        mineLabel.setText("Mines Left: 10");
-
-        mineImageLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mine.jpg"))); // NOI18N
+        mineLabel.setText("Mines Left: " + store.mineStack.size());
 
         javax.swing.GroupLayout minePanelLayout = new javax.swing.GroupLayout(minePanel);
         minePanel.setLayout(minePanelLayout);
@@ -274,7 +264,7 @@ public class BuyStorePanel extends StorePanel {
                 .addGap(54, 54, 54))
             .addGroup(minePanelLayout.createSequentialGroup()
                 .addComponent(mineImageLabel)
-                .addGap(0, 20, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         minePanelLayout.setVerticalGroup(
             minePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -295,9 +285,7 @@ public class BuyStorePanel extends StorePanel {
             }
         });
 
-        moatLabel.setText("Moats Left: 10");
-
-        moatImageLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/moat.jpg"))); // NOI18N
+        moatLabel.setText("Moats Remaining: " + store.moatStack.size());
 
         javax.swing.GroupLayout moatPanelLayout = new javax.swing.GroupLayout(moatPanel);
         moatPanel.setLayout(moatPanelLayout);
@@ -319,7 +307,7 @@ public class BuyStorePanel extends StorePanel {
             moatPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, moatPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(moatImageLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 234, Short.MAX_VALUE)
+                .addComponent(moatImageLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 234, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(buyMoatButton)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -334,9 +322,7 @@ public class BuyStorePanel extends StorePanel {
             }
         });
 
-        cellarLabel.setText("Cellars Left: 10");
-
-        cellarImageLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cellar.jpg"))); // NOI18N
+        cellarLabel.setText("Cellars Left: " + store.cellarStack.size());
 
         javax.swing.GroupLayout cellarPanelLayout = new javax.swing.GroupLayout(cellarPanel);
         cellarPanel.setLayout(cellarPanelLayout);
@@ -352,7 +338,7 @@ public class BuyStorePanel extends StorePanel {
                         .addComponent(buyCellarButton)
                         .addGap(62, 62, 62))))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, cellarPanelLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(24, Short.MAX_VALUE)
                 .addComponent(cellarLabel)
                 .addGap(54, 54, 54))
         );
@@ -375,9 +361,7 @@ public class BuyStorePanel extends StorePanel {
             }
         });
 
-        villageLabel.setText("Villages Left: 10");
-
-        villageImageLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/village.jpg"))); // NOI18N
+        villageLabel.setText("Villages Left: " + store.villageStack.size());
 
         javax.swing.GroupLayout villagePanelLayout = new javax.swing.GroupLayout(villagePanel);
         villagePanel.setLayout(villagePanelLayout);
@@ -416,9 +400,7 @@ public class BuyStorePanel extends StorePanel {
             }
         });
 
-        workshopLabel.setText("Workshops Left: 10");
-
-        workshopImageLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/workshop.jpg"))); // NOI18N
+        workshopLabel.setText("Workshops Left: " + store.workshopStack.size());
 
         javax.swing.GroupLayout workshopPanelLayout = new javax.swing.GroupLayout(workshopPanel);
         workshopPanel.setLayout(workshopPanelLayout);
@@ -457,9 +439,7 @@ public class BuyStorePanel extends StorePanel {
             }
         });
 
-        woodcutterLabel.setText("Woodcutters Left: 10");
-
-        woodcutterImageLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/woodcutter.jpg"))); // NOI18N
+        woodcutterLabel.setText("Woodcutters Left: " + store.woodcutterStack.size());
 
         javax.swing.GroupLayout woodcutterPanelLayout = new javax.swing.GroupLayout(woodcutterPanel);
         woodcutterPanel.setLayout(woodcutterPanelLayout);
@@ -497,8 +477,6 @@ public class BuyStorePanel extends StorePanel {
             }
         });
 
-        copperImageLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/copperSmall.jpg"))); // NOI18N
-
         javax.swing.GroupLayout copperPanelLayout = new javax.swing.GroupLayout(copperPanel);
         copperPanel.setLayout(copperPanelLayout);
         copperPanelLayout.setHorizontalGroup(
@@ -528,8 +506,6 @@ public class BuyStorePanel extends StorePanel {
                 buySilverButtonActionPerformed(evt);
             }
         });
-
-        silverImageLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/silverSmall.jpg"))); // NOI18N
 
         javax.swing.GroupLayout silverPanelLayout = new javax.swing.GroupLayout(silverPanel);
         silverPanel.setLayout(silverPanelLayout);
@@ -563,8 +539,6 @@ public class BuyStorePanel extends StorePanel {
             }
         });
 
-        goldImageLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/goldSmall.jpg"))); // NOI18N
-
         javax.swing.GroupLayout goldPanelLayout = new javax.swing.GroupLayout(goldPanel);
         goldPanel.setLayout(goldPanelLayout);
         goldPanelLayout.setHorizontalGroup(
@@ -595,9 +569,7 @@ public class BuyStorePanel extends StorePanel {
             }
         });
 
-        provinceLabel.setText("Provincess Left: 12");
-
-        provinceImageLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/provinceSmall.jpg"))); // NOI18N
+        provinceLabel.setText("Provinces Left: " + store.provinceStack.size());
 
         javax.swing.GroupLayout provincePanelLayout = new javax.swing.GroupLayout(provincePanel);
         provincePanel.setLayout(provincePanelLayout);
@@ -632,9 +604,7 @@ public class BuyStorePanel extends StorePanel {
             }
         });
 
-        duchyLabel.setText("Duchys Left: 12");
-
-        duchyImageLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/duchySmall.jpg"))); // NOI18N
+        duchyLabel.setText("Duchys Left: " + store.dutchyStack.size());
 
         javax.swing.GroupLayout duchyPanelLayout = new javax.swing.GroupLayout(duchyPanel);
         duchyPanel.setLayout(duchyPanelLayout);
@@ -671,9 +641,7 @@ public class BuyStorePanel extends StorePanel {
             }
         });
 
-        estateLabel.setText("Estates Left: 12");
-
-        estateImageLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/estateSmall.jpg"))); // NOI18N
+        estateLabel.setText("Estates Left: " + store.estateStack.size());
 
         javax.swing.GroupLayout estatePanelLayout = new javax.swing.GroupLayout(estatePanel);
         estatePanel.setLayout(estatePanelLayout);
@@ -722,7 +690,7 @@ public class BuyStorePanel extends StorePanel {
                         .addContainerGap()
                         .addComponent(moatPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(cellarPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(cellarPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(villagePanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -739,7 +707,7 @@ public class BuyStorePanel extends StorePanel {
                     .addComponent(provincePanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(duchyPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(estatePanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(537, Short.MAX_VALUE))
+                .addContainerGap(757, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
