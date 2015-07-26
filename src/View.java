@@ -71,7 +71,7 @@ public class View {
             //do the endgame screen
         } else if (gm.getActivePlayer().isDiscardInEffect()){
             ppanel = new DiscardPanel(this);
-            //spanel = whatever the "Can't buy anything" model of the store panel is
+            spanel = new InactiveStorePanel(this);
         } else if (gm.getActivePlayer().playerTurn == Player.Turn.BUYING){
             ppanel = new InactivePanel(this);
             spanel = new BuyStorePanel(this);

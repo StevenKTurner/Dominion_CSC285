@@ -22,6 +22,7 @@ public class Player {
     public enum Turn{ACTION, BUYING, FREEBIE, DISCARDING, TRASHING, REDRAWING, WAITING, MINING, REMODELING};
     public Turn playerTurn = Turn.WAITING;
     private boolean discardInEffect = false;
+    private int amountToDiscard;
     
     public Player(String name){
         
@@ -254,6 +255,18 @@ public class Player {
     
     public void setFreebieValue(int i){
         freebieValue = i;
+    }
+    
+    public void setAmountToDiscard(int i){
+        amountToDiscard = i;
+    }
+    
+    public int getAmountToDiscard(){
+        return amountToDiscard;
+    }
+    
+    public void reduceAmountToDiscard(int i){
+        amountToDiscard -= i;
     }
     
 //    public static void main(String[] args) {

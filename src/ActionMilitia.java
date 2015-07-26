@@ -8,6 +8,8 @@ public class ActionMilitia extends Action {
             for (Player player : view.getGameManager().getPlayers()){
                 if (player.playerTurn == Player.Turn.WAITING){
                     player.playerTurn = Player.Turn.DISCARDING;
+                    player.setDiscardInEffect(true);
+                    player.setAmountToDiscard(player.getHand().size()-(player.getHand().size()-3));
                 }
             }
             
