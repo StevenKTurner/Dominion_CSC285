@@ -137,12 +137,14 @@ public class Player {
             discardPile.add(cards.get(i));
             cards.remove(i);
         }
+        countCash(hand);
 //        System.out.println(name + " Discarded " + cards);
     }
     
     public void discard(Card card){
         discardPile.add(card);
         hand.remove(card);
+        countCash(hand);
     }
     
     public void trashCard(Card card, ArrayList<Card> source){
