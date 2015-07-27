@@ -55,17 +55,6 @@ public class GameManager {
         }
     }
     
-    //may need to change based on how actions work
-//    public void handleAction(Action action){
-//        currentAction = action;
-//        currentAction.initialize(this);
-//    }
-    
-    //Makes whatever the current turn is do its thing
-//    public void initiateTurn(){
-//        currentTurn.use();
-//    }
-    
     public ArrayList<Player> getPlayers(){
         return players;
     }
@@ -74,7 +63,7 @@ public class GameManager {
         return activePlayer;
     }
     
-    public void startNextPlayerTurn(){
+    public void startNextPlayerTurn(){ //sets next player in Array to "Active"
 //        System.out.println(activePlayer.getName() + "ends turn");
         activePlayer.endTurn();
         int turnNumber = players.lastIndexOf(activePlayer);

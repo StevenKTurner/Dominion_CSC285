@@ -26,19 +26,9 @@ public class View {
     
     public View(ArrayList<String> players){
         GameStart(players);
-        //Need to start up the Start Game Screen here to get the player names and amout of players and pass that in
-        //to a newly created GameManager as an ArrayList<String>
-        
-        //Temporary testing code below:
-//        ArrayList<String> temp = new ArrayList();
-//        temp.add("Steven");
-//        temp.add("Neal");
-//        temp.add("Kelly");
-//        temp.add("Zach");
-//        gm = new GameManager(temp);
     }
     
-    public void GameStart(ArrayList<String> players){
+    public void GameStart(ArrayList<String> players){ //creates the Game Manager with the list of players and sets up the GUI
         gm = new GameManager(players);
  
         mainPanel = new JPanel();
@@ -67,6 +57,8 @@ public class View {
         mainPanel.removeAll();  
         ppanel.removeAll();
         spanel.removeAll();
+        
+        //The code below switches between the player controls based on the state of the GM and Players
         if (gm.isEndGame()){
             //do the endgame screen
             gm.endGame();

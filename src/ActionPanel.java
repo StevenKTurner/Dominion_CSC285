@@ -21,7 +21,9 @@ import javax.swing.JScrollPane;
  *
  * @author Steven
  */
-public class ActionPanel extends PlayerPanel{
+//ActionPanel contains the buttons that allow the player to play an action card, move to the
+//Buy phase, or end their turn
+public class ActionPanel extends PlayerPanel{  //PlayerPanel is a simple interface with just an Update method
     
     private GameManager gm;
     private View view;
@@ -35,7 +37,7 @@ public class ActionPanel extends PlayerPanel{
     private JButton endButton;
     private JButton buyTurnButton;
     
-    public ActionPanel(View view){
+    public ActionPanel(View view){ //creates the necessary layout for this panel
         gm = view.getGameManager();
         this.view = view;
         this.setLayout(new BoxLayout(this, BoxLayout.PAGE_AXIS));
@@ -59,7 +61,7 @@ public class ActionPanel extends PlayerPanel{
         update();
     }
     
-    private void populateCardButtons(){
+    private void populateCardButtons(){ //creates the card buttons and adds functionality as long as they are an Action card
 //        System.out.println("Populating buttons");
         //clearCardButtons();
 //        System.out.println(gm.getActivePlayer().getName() + "is populating Cards");
@@ -75,7 +77,7 @@ public class ActionPanel extends PlayerPanel{
 //        System.out.println("Cards Populated: " + cardButtons.size());
     }
     
-    private void clearCardButtons(){
+    private void clearCardButtons(){  //clears buttons for proper repainting
 //        System.out.println("Clearing Buttons");
         for (int i = cardButtons.size()-1; i >= 0; i--){
             handPanel.remove(cardButtons.get(i));
@@ -84,7 +86,7 @@ public class ActionPanel extends PlayerPanel{
 //        System.out.println("Buttons left: " + cardButtons.size());
     }
     
-    private void populateInPlay(){
+    private void populateInPlay(){ //adds cards that have been played as a list of names at top of panel
         String temp = gm.getActivePlayer().getName() + " has Played: ";
         for (Card card: gm.getActivePlayer().getInPlay()){
             temp += card.getName() + ", ";
@@ -92,7 +94,7 @@ public class ActionPanel extends PlayerPanel{
         statsPanel.add(new JLabel(temp));
     }
     
-    public void update(){
+    public void update(){ //refreshes and repaints all information
         clearCardButtons();
 //        System.out.println("Cards cleared");
         statsPanel.removeAll();
@@ -118,12 +120,10 @@ public class ActionPanel extends PlayerPanel{
 //        System.out.println("ActionPanel updated");
     }
 
-    private static class EndButtonListener implements ActionListener {
+    private static class EndButtonListener implements ActionListener { //contains action to switch active players and refresh view
         
         private View view;
         
-        //Will need to switch this to take the View later on, as the End Button may need to recreate
-        //The PlayerPanel itself in view as a different subclass.  Right now this is a proof of concept.
         public EndButtonListener(View view) {
             this.view = view;
         }
