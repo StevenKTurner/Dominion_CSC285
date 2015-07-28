@@ -9,8 +9,8 @@
  * @author User
  */
 
-import com.sun.glass.events.WindowEvent;
-import static java.lang.Integer.parseInt; 
+//import com.sun.glass.events.WindowEvent;
+//import static java.lang.Integer.parseInt; 
 import java.util.ArrayList;
 import javax.swing.JFrame;
 public class StartScreenPanel extends JFrame {
